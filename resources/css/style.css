@@ -1,0 +1,350 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #Fbfffe;
+  color: #001514;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.login {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/public/assets/images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.main_container {
+  padding: 1.5em 3%;
+  margin: 0 0 3em;
+}
+
+.navbar_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 2px 2px 3px #001514;
+  position: sticky;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  top: 0;
+  left: 0;
+  z-index: 100;
+  height: 10vh;
+  padding: 0 0.9em;
+}
+.navbar_container .nav_logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0.5em;
+}
+.navbar_container .nav_logo .logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.navbar_container .nav_logo .home a {
+  text-decoration: none;
+  color: #001514;
+  font-size: 1.3em;
+  font-weight: 550;
+}
+.navbar_container .nav_links ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.navbar_container .nav_links ul li {
+  padding: 0 0.4em;
+}
+.navbar_container .nav_links ul li a {
+  text-decoration: none;
+  color: #001514;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+.navbar_container .nav_links ul .profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar_container .nav_links ul .profile .logout {
+  background: #f00920;
+}
+.navbar_container .nav_links ul .profile .profiles {
+  margin: 0 0.5em;
+  border: 1px solid #001514;
+  border-radius: 50%;
+  padding: 0.3em;
+}
+.navbar_container .nav_links ul .profile button {
+  background: #001514;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5em 1.2em;
+}
+.navbar_container .nav_links ul .profile button a {
+  text-decoration: none;
+  color: #001514;
+  color: #Fbfffe;
+  font-weight: 550;
+}
+.navbar_container .burger {
+  display: none;
+  cursor: pointer;
+}
+.navbar_container .burger span {
+  height: 3px;
+  width: 30px;
+  display: block;
+  margin: 0.5em 0;
+  background-color: #001514;
+  color: #001514;
+}
+
+@media screen and (width <= 726px) {
+  .navbar_container .nav_links {
+    display: none;
+  }
+  .navbar_container .nav_links ul {
+    display: none;
+    width: 50%;
+    height: 60vh;
+    background: #001514;
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0.5em 1em;
+    gap: 1em 0;
+    top: 10vh;
+    right: 0.1em;
+  }
+  .navbar_container .nav_links ul li {
+    width: 80%;
+    margin: auto;
+  }
+  .navbar_container .nav_links ul li a {
+    text-decoration: none;
+    color: #001514;
+    color: #Fbfffe;
+  }
+  .navbar_container .nav_links ul .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: left;
+    gap: 0.9em;
+  }
+  .navbar_container .nav_links ul .profile .profiles {
+    border-radius: 50%;
+    border: 1px solid #Fbfffe;
+    padding: 0.3em;
+  }
+  .navbar_container .nav_links ul .profile .btn {
+    background: #Fbfffe;
+    padding: 0.5em 1.9em;
+    color: #001514;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+  }
+  .navbar_container .show {
+    display: block !important;
+  }
+  .navbar_container .show ul {
+    display: flex;
+  }
+  .navbar_container .burger {
+    display: block;
+  }
+  .navbar_container .active_burger span {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .navbar_container .active_burger span:nth-child(1) {
+    transform: rotate(-45deg) translate(-7px, 8px);
+  }
+  .navbar_container .active_burger span:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar_container .active_burger span:nth-child(3) {
+    transform: rotate(45deg) translate(-7px, -8px);
+  }
+}
+form input,
+form textarea,
+form select {
+  padding: 0.5em 0.9em;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid gray;
+  margin: 0.5em 0;
+  font-size: 0.9em;
+}
+form button {
+  border: none;
+  padding: 0.4em 1.5em;
+  border-radius: 8px;
+  font-size: 1.1em;
+  color: #Fbfffe;
+  background: #d2691e;
+  cursor: pointer;
+  font-weight: 550;
+}
+form .group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+}
+@media screen and (width > 726px) {
+  form .group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.authentication_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+.authentication_container form {
+  width: 35%;
+  padding: 0.6em 1.2em;
+  border-radius: 16px;
+  box-shadow: 2px 2px 3px #001514;
+  background-color: #Fbfffe;
+}
+.authentication_container form p {
+  padding: 0.9em 0;
+}
+.authentication_container form h1 {
+  text-align: center;
+}
+.authentication_container form .input_group {
+  padding: 0.3em 0;
+  width: 100%;
+  margin: 0 0 0.3em;
+  color: #001514;
+}
+.authentication_container form .input_group input {
+  margin: 0.5em 0;
+}
+.authentication_container form label {
+  font-weight: 500;
+  padding: 0.5em 0;
+  font-size: 0.95em;
+}
+.authentication_container form .custom_radio_buttons {
+  display: flex;
+}
+.authentication_container form .custom_radio_buttons label {
+  padding: 0.3em 0.2em;
+  margin: 0.5em 0;
+  position: relative;
+  cursor: pointer;
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+.authentication_container form .custom_radio_buttons label .option_radio {
+  position: relative;
+  margin: 0 0.1em 0 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: auto;
+  border: unset;
+}
+.authentication_container form .custom_radio_buttons label .option_radio:before {
+  transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+  transform: scale(0, 0);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0.125rem;
+  z-index: 1;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: #16a085;
+  border-radius: 50%;
+}
+.authentication_container form .custom_radio_buttons label .option_radio:checked:before {
+  transform: scale(1, 1);
+}
+.authentication_container form .custom_radio_buttons label .option_radio:after {
+  content: "";
+  position: absolute;
+  top: -0.25rem;
+  left: -0.125rem;
+  width: 1rem;
+  height: 1rem;
+  background: #fff;
+  border: 2px solid #d6d6d6;
+  border-radius: 50%;
+}
+
+@media screen and (width <= 726px) {
+  .authentication_container form {
+    width: 85%;
+  }
+}
+.alert {
+  padding: 1em;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  top: 10vh;
+  width: 30%;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.alert-danger {
+  background: #eb0404;
+}
+
+.alert-success {
+  background: #02a81d;
+}
+
+.alert-warning {
+  background: #c28005;
+}
+
+.inline_alert {
+  margin: 0.1em 0 0;
+  font-weight: bold;
+  color: #eb0404;
+}
+
+.inline_alert_success {
+  padding: 0.5em;
+  margin: 0.5em 0;
+  color: #02a81d;
+}
+
+@media screen and (width <= 726px) {
+  .alert {
+    width: 80%;
+  }
+}/*# sourceMappingURL=style.css.map */
