@@ -11,9 +11,20 @@
 
     <div class="nav_links" id="navLinks">
         <ul>
+            @if(Auth::check() && (Auth::user()->user_level == 1 || Auth::user()->user_level == 0))
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+            
+            @elseif(Auth::user() && Auth::user()->user_level == 2)
+                <li>
+                    <a href="{{ route('home') }}"></a>
+                </li>
+            @endif
+            
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('collection') }}">Shop</a></li>
-            <li><a href="#">Gallery</a></li>
+            <li><a href="{{ route('blog') }}">Blog</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>
 
             <li class="profile">

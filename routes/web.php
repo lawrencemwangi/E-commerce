@@ -9,6 +9,8 @@ Route::get('/', [HomeController::class, 'HomePage'])->name('home');
 Route::get('/about', [HomeController::class, 'AboutPage'])->name('about');
 Route::get('/collection', [HomeController::class, 'CollectionPage'])->name('collection');
 Route::get('/contact', [HomeController::class, 'ContactPage'])->name('contact');
+Route::get('/blog', [HomeController::class, 'BlogPage'])->name('blog');
+
 
 
 Route::middleware('auth')->group(function () {
