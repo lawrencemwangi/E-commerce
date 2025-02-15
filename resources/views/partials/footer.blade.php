@@ -28,11 +28,11 @@
                     <img src="{{ asset('assets/images/instagram.png') }}" alt="instagram icon">
                 </a>
     
-                <a href="https://www.linkedin.com/in/lawrencemwangi/" target="_blank" rel="noopener noreferrer">
-                    <img src="{{ asset('assets/images/linkedin.png') }}" alt="linkedin icon">
+                <a href="https://www.youtube.com/@lawnetDecor/" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ asset('assets/images/youtube.png') }}" alt="youtube icon">
                 </a>
             
-                <a href="http://wa.me/254799509242?text='Hello Lawnet developers'" target="_blank" rel="noopener noreferrer">
+                <a href="http://wa.me/254799509242?text='Hello {{ config('site_settings.site_name') }}'" target="_blank" rel="noopener noreferrer">
                     <img src="{{ asset('assets/images/whatsapp.png') }}" alt="whatapp icon">
                 </a>
             </div>
