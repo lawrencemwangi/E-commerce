@@ -21,14 +21,14 @@
             <h3>Contact</h3>
             <div class="social_media">
                 <a href="https://github.com/lawrencemwangi" target="_blank" rel="noopener noreferrer">
-                    <img src="{{ asset('assets/images/github.png') }}" alt="github icon">
+                    <img src="{{ asset('assets/images/facebook.png') }}" alt="github icon">
                 </a>
                 
-                <a href="https://www.instagram.com/lawrenzo.mwangi/" target="_blank" rel="noopener noreferrer">
+                <a href="{{ config('site_settings.social_links.instagram') }}" target="_blank" rel="noopener noreferrer">
                     <img src="{{ asset('assets/images/instagram.png') }}" alt="instagram icon">
                 </a>
     
-                <a href="https://www.youtube.com/@lawnetDecor/" target="_blank" rel="noopener noreferrer">
+                <a href="{{ config('site_settings.social_links.youtube') }}" target="_blank" rel="noopener noreferrer">
                     <img src="{{ asset('assets/images/youtube.png') }}" alt="youtube icon">
                 </a>
             
