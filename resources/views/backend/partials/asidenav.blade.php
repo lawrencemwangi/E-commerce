@@ -7,7 +7,7 @@
 
         <div class="aside_links">
             <ul>
-                <li>
+                <li class="{{ request()->routeIs('admin_dashboard') ? 'active' : '' }}">
                     <a href="{{ route('admin_dashboard')}}">
                         <i class="fas fa-tachometer-alt"></i>
                         <span>Dashboard</span>
@@ -21,28 +21,28 @@
                     </a>
                 </li>
 
-                <li>
+                <li class="{{ request()->routeIs('users.*') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fas fa-tools"></i>
                         <span>Services</span>
                     </a>
                 </li>
 
-                <li>
+                <li class="{{ request()->routeIs('users.*') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fas fa-shopping-cart"></i>
                         <span>Orders</span>
                     </a>
                 </li>
 
-                <li>
+                <li class="{{ request()->routeIs('users.*') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fas fa-code-branch"></i>
                         <span>Projects</span>
                     </a>
                 </li>
 
-                <li>
+                <li class="{{ request()->routeIs('users.*') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fas fa-blog"></i>
                         <span>Blogs</span>
