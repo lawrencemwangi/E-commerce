@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="aside_container">
         <div class="aside_logo">
-            <img src="{{ asset('assets/images/dell.jpg') }}" width="40px" height="40px" alt="logo">
+            <img src="{{ asset('assets/images/logo.jpeg') }}" width="40px" height="40px" alt="logo">
             <a href="{{ route('home')}}" target="_blank">Lawnet Dev</a>
         </div>
 
@@ -15,46 +15,42 @@
                 </li>
                 
                 <li>
-                    <a href="{{ route('user.index') }}">
+                    <a href="#">
                         <i class="fas fa-users"></i>
                         <span>Users</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('service.index') }}">
-                        <i class="fab fa-product-hunt"></i>
+                    <a href="#">
+                        <i class="fas fa-tools"></i>
                         <span>Services</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('projects.index') }}">
-                        <i class="fas fa-tasks"></i>
+                    <a href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Orders</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fas fa-code-branch"></i>
                         <span>Projects</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('blog.index') }}">
+                    <a href="#">
                         <i class="fas fa-blog"></i>
                         <span>Blogs</span>
                     </a>
                 </li>
-                <li>
-                    <a href="{{ route('orders.index') }}">
-                        <i class="fas fa-blog"></i>
-                        <span>Orders</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('chat.index') }}">
-                        <i class="fas fa-blog"></i>
-                        <span>Chats</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('message.index') }}">
+
+                <li class="{{ request()->routeIs('messages.*') ? 'active' : '' }}">
+                    <a href="{{ route('messages.index') }}">
                         <i class="fas fa-comments"></i>
                         <span>Messages</span>
                     </a>
@@ -69,7 +65,7 @@
             </div>
 
             <div class="name">
-                <a href="{{ route('profile.edit')}}">{{ Auth::User()->first_name }} {{ Auth::User()->last_name}}</a>
+                <a href="{{ route('profile.edit')}}">{{ Auth::User()->names }}</a>
             </div>
 
             <form action="{{ route('logout') }}" method="post">

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MessagesController;
 
 
 Route::get('/', [HomeController::class, 'HomePage'])->name('home');
@@ -21,7 +22,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth','admin')->group(function (){
-    Route::get('/Dashboard', [DashboardController::class, 'Dashboard'])->name('admin_dashboard');
+    Route::get('admin/Dashboard', [DashboardController::class, 'Dashboard'])->name('admin_dashboard');
+
+    Route::resource('admin/messages', MessagesController::class);
 });
 
 

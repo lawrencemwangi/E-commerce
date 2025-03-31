@@ -18,10 +18,11 @@ $asidenav_width:15%;
         img{
             border-radius: 50%;
         }
+
         a{
             font-size: 1.12em;
             text-decoration: none;
-            color:$background-color;
+            color:$text-color;
             font-weight: bold;
         }
     }
@@ -43,7 +44,7 @@ $asidenav_width:15%;
                     display: flex;
                     align-items: center;
                     text-decoration: none;
-                    color:$background-color;
+                    color:$text-color;
                     font-size: 1em;
                 }
             }

@@ -27,6 +27,81 @@ html {
   margin: 0 0 3em;
 }
 
+.active {
+  background: #001514;
+  border-radius: 4px;
+}
+.active a {
+  color: #Fbfffe !important;
+  padding: 0.2em;
+}
+
+.user_container .user_content {
+  padding: 0.9em;
+}
+.user_container .user_content .user_details,
+.user_container .user_content .user_infor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  padding: 0.3em 0;
+}
+@media screen and (width <= 726px) {
+  .user_container .user_content .user_details,
+  .user_container .user_content .user_infor {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.user_container .user_content .user_details {
+  background: #001514;
+  color: #Fbfffe;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 0.2em;
+}
+.user_container .user_content .user_details span {
+  counter-increment: word-count;
+  border-right: 1.5px solid #Fbfffe;
+  text-align: center;
+}
+.user_container .user_content .user_details span:nth-child(n+4) {
+  border-right: none;
+  padding-right: 0;
+}
+.user_container .user_content .user_infor {
+  color: #001514;
+  border-bottom: 1px solid #001514;
+}
+.user_container .user_content .user_infor .action {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+}
+@media screen and (width > 726px) {
+  .user_container .user_content .user_infor .action {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.user_container .user_content .user_infor .action .fa-trash-alt {
+  color: #f00920;
+}
+.user_container .user_content .user_infor .action a {
+  text-decoration: none;
+  color: #001514;
+  text-align: center;
+  color: #28a745;
+  font-weight: bold;
+}
+.user_container .user_content .user-col {
+  padding: 0.5em;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.user_container .user_content .user-col.email {
+  max-width: 200px;
+}
+
 .navbar_container {
   display: flex;
   align-items: center;
@@ -405,54 +480,6 @@ form .group {
   color: #Fbfffe;
 }
 
-.admin_container {
-  display: flex;
-}
-.admin_container .admin {
-  margin-left: 2%;
-}
-.admin_container .admin .container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5em;
-  gap: 0.9em;
-  padding: 0.9em 1.2em;
-}
-@media screen and (width > 726px) {
-  .admin_container .admin .container {
-    grid-template-columns: repeat(7, 1fr);
-  }
-}
-.admin_container .admin .container .dashboard {
-  background: #cacaca;
-  padding: 0.1em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  gap: 0.9em;
-  border-radius: 16px;
-  font-size: 1.1em;
-}
-.admin_container .admin .container .dashboard span, .admin_container .admin .container .dashboard p {
-  padding: 0.2em 0;
-  font-weight: 550;
-}
-.admin_container .admin .container .dashboard span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.admin_container .admin .container .dashboard i {
-  font-size: 1.3em;
-}
-.admin_container .admin .text-danger {
-  color: #eb0404;
-}
-.admin_container .admin .text-success {
-  color: #02a81d;
-}
-
 .aside_container {
   height: 100vh;
   position: sticky;
@@ -476,7 +503,7 @@ form .group {
 .aside_container .aside_logo a {
   font-size: 1.12em;
   text-decoration: none;
-  color: #Fbfffe;
+  color: #001514;
   font-weight: bold;
 }
 .aside_container .aside_links ul {
@@ -497,7 +524,7 @@ form .group {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #Fbfffe;
+  color: #001514;
   font-size: 1em;
 }
 .aside_container .user {
@@ -544,6 +571,48 @@ form .group {
 .aside_container .user .logout a {
   text-decoration: none;
   color: #Fbfffe;
+}
+
+.admin_container {
+  display: flex;
+}
+.admin_container .lastseen_details p {
+  font-size: 1.1em;
+  padding: 0.2em 0;
+}
+.admin_container .dashboard_infor {
+  width: 85%;
+  padding-left: 0.9em;
+}
+.admin_container .dashboard_infor .admin_dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+  gap: 0.9em;
+  padding: 0.8em;
+}
+@media screen and (width > 726px) {
+  .admin_container .dashboard_infor .admin_dashboard {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+.admin_container .dashboard_infor .admin_dashboard .admin_items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  background: #001514;
+  padding: 0.4em;
+  border-radius: 16px;
+  color: #Fbfffe;
+}
+.admin_container .dashboard_infor .admin_dashboard .admin_items i, .admin_container .dashboard_infor .admin_dashboard .admin_items p, .admin_container .dashboard_infor .admin_dashboard .admin_items span {
+  font-size: 1.1em;
+}
+.admin_container .dashboard_infor .admin_dashboard .admin_items span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .home_container .hero_container {

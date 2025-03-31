@@ -1,44 +1,38 @@
 .admin_container{
     display: flex;
 
-   .admin{
-        // width:calc(100% - $asidenav_width);
-        margin-left: 2%;
-        
-        .container{
-            @include grid(7);
-            gap:0.9em;
-            padding: 0.9em 1.2em;
+    .lastseen_details{
+        p{
+            font-size: 1.1em;
+            padding: 0.2em 0; 
+        }
+    }
 
-            .dashboard{
-                background: #cacaca;
-                padding: 0.1em;
+    .dashboard_infor{
+        width: calc(100% - $asidenav_width);
+        padding-left: 0.9em;
+
+        .admin_dashboard{
+            @include grid(5);
+            gap: 0.9em;
+            padding: 0.8em;
+
+            .admin_items{
                 @include flex_center;
-                flex-direction: row;
-                gap:0.9em;
+                gap: 1em;
+                background: $text-color;
+                padding: 0.4em;
                 border-radius: 16px;
-                font-size: 1.1em;
-                span,p{
-                    padding: 0.2em 0;
-                    font-weight: 550;
+                color: $background-color;
+
+                i,p,span{
+                    font-size: 1.1em;
                 }
+
                 span{
                     @include flex_center;
                 }
-
-                i{
-                    font-size: 1.3em;
-                }
-
             }
-        }
-
-        .text-danger{
-            color:$danger;
-        }
-        
-        .text-success{
-            color:$success;
         }
     }
 }
