@@ -9,6 +9,6 @@ class Messages extends Model
     protected $fillable = [
         'names',
         'email',
-        'messages'
+        'message'
     ];
 }

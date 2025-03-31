@@ -10,22 +10,22 @@
                 <span class="user-col">Action</span>
             </div>
              
-            {{-- @if (empty($dorms)) --}}
-                {{-- <p>No User Found at the moment</p> 
+            @if (empty($messages))
+                <p>No User Found at the moment</p> 
             @else
-                @foreach ($dorms as $dorm) --}}
+                @foreach ($messages as $message)
                     <div class="user_infor">
-                        <span class="user-col">#</span>
-                        <span class="user-col">#</span>
-                        <span class="user-col">#</span>
+                        <span class="user-col">{{ $message->names }}</span>
+                        <span class="user-col">{{ $message->email }}</span>
+                        <span class="user-col">{{ $message->message }}</span>
                         <span class="action">
                             <a href="#">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
                         </span>
                     </div>
-                {{-- @endforeach
-            @endif       --}}
+                @endforeach
+            @endif      
         </div>
     </div>
 </x-admin-layout>

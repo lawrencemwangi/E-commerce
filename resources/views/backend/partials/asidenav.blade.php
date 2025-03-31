@@ -14,8 +14,8 @@
                     </a>
                 </li>
                 
-                <li>
-                    <a href="#">
+                <li class="{{ request()->routeIs('users.*') ? 'active' : '' }}">
+                    <a href="{{ route('users.index') }}">
                         <i class="fas fa-users"></i>
                         <span>Users</span>
                     </a>

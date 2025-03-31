@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\UserController;
 
 
 Route::get('/', [HomeController::class, 'HomePage'])->name('home');
@@ -25,6 +26,8 @@ Route::middleware('auth','admin')->group(function (){
     Route::get('admin/Dashboard', [DashboardController::class, 'Dashboard'])->name('admin_dashboard');
 
     Route::resource('admin/messages', MessagesController::class);
+
+    Route::resource('admin/users', UserController::class);
 });
 
 

@@ -7,7 +7,9 @@
             <p>{{ config('site_settings.contact') }} </p>
         </div>
         <div class="contact_form">
-            <form action="" method="post">
+            <form action="{{ route('messages.store') }}" method="post">
+                @csrf
+                
                 <div class="input_group">
                     <div class="input_content">
                         <input type="text" name="names" id="names"  required>

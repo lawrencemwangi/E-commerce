@@ -12,7 +12,8 @@ class MessagesController extends Controller
      */
     public function index()
     {
-        return view('backend.messages.list_messages');
+        $messages = Messages::orderBy('created_at', 'desc')->get();
+        return view('backend.messages.list_messages', compact('messages'));
     }
 
     /**
@@ -28,7 +29,23 @@ class MessagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valided_data = $request->validate([
+            'names' => 'required|string',
+            'email' => 'required|string|lowercase|email:rfc,dns|max:255',
+            'message' => 'required|string',
+        ]);
+
+        $messages = new Messages;
+        $messages->names = $valided_data['names'];
+        $messages->email = $valided_data['email'];
+        $messages->message = $valided_data['message'];
+
+        $messages->save();
+
+        return back()->with('success', [
+            'message' => 'Message Sent Successfully',
+            'duration' => $this->alert_message_duration,
+        ]);
     }
 
     /**

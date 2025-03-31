@@ -23,11 +23,9 @@
             span{
                 counter-increment: word-count;
                 border-right: 1.5px solid $background-color;
-                text-align: center; 
-
             }
             
-            span:nth-child(n+4) {
+            span:last-child{
                 border-right: none;
                 padding-right: 0;
             }
