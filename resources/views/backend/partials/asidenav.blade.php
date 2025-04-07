@@ -42,8 +42,8 @@
                     </a>
                 </li>
 
-                <li class="{{ request()->routeIs('users.*') ? 'active' : '' }}">
-                    <a href="#">
+                <li class="{{ request()->routeIs('blog.*') ? 'active' : '' }}">
+                    <a href="{{ route('blog.index') }}">
                         <i class="fas fa-blog"></i>
                         <span>Blogs</span>
                     </a>

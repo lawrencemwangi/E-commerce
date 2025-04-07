@@ -6,10 +6,10 @@
     <div class="dashboard_infor">
         <div class="admin_dashboard">
             <div class="admin_items">
-                <i class="fa fa-user-graduate"></i>
+                <i class="fa fa-users"></i>
                 <div class="details">
-                    <p>Students</p>
-                    <span>#</span>
+                    <p>Users</p>
+                    <span>{{ $Count_users }}</span>
                 </div>
             </div>
             
@@ -32,8 +32,8 @@
             <div class="admin_items">
                 <i class="fa fa-school"></i>
                 <div class="details">
-                    <p>Classes</p>
-                    <span>#</span>
+                    <p>Messages</p>
+                    <span>{{ $Count_messages }}</span>
                 </div>
             </div>
 

@@ -47,3 +47,41 @@ html{
     color: $success-color;
     font-weight: bold;
 }
+
+
+
+.header{
+    padding: 0.9em 0;
+    @include grid(3);
+    align-items: center;
+
+    .search{
+        input{
+            padding: 0.5em 2em;
+            border-radius: 12px;
+            border:1px solid $text-color;
+
+            span{
+                i{
+                    color:$text-color;
+                }
+            }
+
+        }
+    }
+
+    .btn{
+        button{
+            border: none;
+
+            a{
+                @include anchor;
+                background: $text-color;
+                padding: 0.5em 1.2em;
+                color: $background-color;
+                border-radius: 8px;
+            }
+        }
+        
+    }
+}

@@ -25,7 +25,7 @@
                 </p>
             </div>
             <div class="about_image">
-                <img src="../assets/images/image.jpg" alt="House Photo">
+                <img src="../assets/images/logo.jpeg" alt="House Photo">
             </div>
         </div>
         

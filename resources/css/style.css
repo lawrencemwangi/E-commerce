@@ -33,7 +33,49 @@ html {
 }
 .active a {
   color: #Fbfffe !important;
-  padding: 0.2em;
+  padding: 0.1em;
+}
+
+.text_danger {
+  color: #f00920;
+  font-weight: bold;
+}
+
+.text-success {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.header {
+  padding: 0.9em 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+  align-items: center;
+}
+@media screen and (width > 726px) {
+  .header {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.header .search input {
+  padding: 0.5em 2em;
+  border-radius: 12px;
+  border: 1px solid #001514;
+}
+.header .search input span i {
+  color: #001514;
+}
+.header .btn button {
+  border: none;
+}
+.header .btn button a {
+  text-decoration: none;
+  color: #001514;
+  background: #001514;
+  padding: 0.5em 1.2em;
+  color: #Fbfffe;
+  border-radius: 8px;
 }
 
 .user_container .user_content {
@@ -61,9 +103,8 @@ html {
 .user_container .user_content .user_details span {
   counter-increment: word-count;
   border-right: 1.5px solid #Fbfffe;
-  text-align: center;
 }
-.user_container .user_content .user_details span:nth-child(n+4) {
+.user_container .user_content .user_details span:last-child {
   border-right: none;
   padding-right: 0;
 }
@@ -160,6 +201,7 @@ html {
 }
 .navbar_container .nav_links ul .profile .logout {
   background: #f00920;
+  padding: 0.3em 0.8em;
 }
 .navbar_container .nav_links ul .profile .profiles {
   margin: 0 0.5em;
@@ -566,7 +608,8 @@ form .group {
 }
 .aside_container .user .logout {
   background: red;
-  margin: 0.5em 0;
+  margin: 0.4em 0;
+  padding: 0.4em 1.9em;
 }
 .aside_container .user .logout a {
   text-decoration: none;
@@ -616,10 +659,10 @@ form .group {
 }
 
 .home_container .hero_container {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url("/public/assets/images/image.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/public/assets/images/img3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: inherit;
   height: 90vh;
 }
 .home_container .hero_container .hero_content {
