@@ -13,15 +13,15 @@
             <div class="links">
                 <a href="{{ route('collection') }}">Shop</a>
                 <a href="{{ route('contact') }}">Contact</a>
-                <a href="#">blog</a>
+                <a href="{{ route('blog') }}">blog</a>
             </div>
         </div>
     
         <div class="footer_social">
             <h3>Contact</h3>
             <div class="social_media">
-                <a href="https://github.com/lawrencemwangi" target="_blank" rel="noopener noreferrer">
-                    <img src="{{ asset('assets/images/facebook.png') }}" alt="github icon">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ asset('assets/images/facebook.png') }}" alt="facebook icon">
                 </a>
                 
                 <a href="{{ config('site_settings.social_links.instagram') }}" target="_blank" rel="noopener noreferrer">
@@ -32,7 +32,7 @@
                     <img src="{{ asset('assets/images/youtube.png') }}" alt="youtube icon">
                 </a>
             
-                <a href="http://wa.me/254799509242?text='Hello {{ config('site_settings.site_name') }}'" target="_blank" rel="noopener noreferrer">
+                <a href="{{ config('site_settings.social_links.whatapp') }}" target="_blank" rel="noopener noreferrer">
                     <img src="{{ asset('assets/images/whatsapp.png') }}" alt="whatapp icon">
                 </a>
             </div>

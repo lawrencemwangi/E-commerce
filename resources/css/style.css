@@ -659,10 +659,10 @@ form .group {
 }
 
 .home_container .hero_container {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/public/assets/images/img3.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/public/assets/images/img2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: inherit;
+  background-position: top;
   height: 90vh;
 }
 .home_container .hero_container .hero_content {
@@ -799,7 +799,7 @@ form .group {
   }
 }
 .about_container .about_history .about_content {
-  padding: 0.9em 0;
+  padding: 2em 0;
 }
 .about_container .about_history .about_content h2, .about_container .about_history .about_content p {
   margin: 0.9em 0;
@@ -812,42 +812,6 @@ form .group {
 .about_container .about_history .about_image img {
   width: 90%;
   height: 65vh;
-  border-radius: 24px;
-}
-.about_container .goals {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5em;
-  margin: 1.2em 0;
-}
-@media screen and (width > 726px) {
-  .about_container .goals {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-.about_container .goals .mission, .about_container .goals .vission {
-  padding: 0 0.5em;
-  box-shadow: 3px 3px 5px #001514;
-  border-radius: 12px;
-}
-.about_container .goals h3, .about_container .goals p {
-  margin: 0.9em 0;
-}
-.about_container .team_container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5em;
-  gap: 2em;
-}
-@media screen and (width > 726px) {
-  .about_container .team_container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-.about_container .team_container .works {
-  margin: 1.2em 0;
-  padding: 0.5em;
-  border: 1px solid #001514;
   border-radius: 24px;
 }
 

@@ -1,10 +1,10 @@
 .home_container{
     .hero_container{
         background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3))
-                            ,url('/public/assets/images/img3.jpg');
+                            ,url('/public/assets/images/img2.jpg');
         background-size:cover;
         background-repeat: no-repeat;
-        background-position:inherit;
+        background-position:top;
         height: 90vh;
 
         .hero_content{
