@@ -19,6 +19,40 @@
             </div>
         </div>
 
+        <div class="expirence_container">
+            <h1>Experience</h1>
+
+            <div class="expirence_infor">
+                <h3>
+                    <div class="flex">
+                        <span class="counter" data-target="5">0</span>
+                        <span class="symbol">+</span>
+                    </div>
+                    <span>Years of Experience</span>
+                </h3>
+
+                <h3>
+                    <div class="flex">
+                        <span class="counter" data-target="90">0 </span>
+                        <span class="symbol">+</span>
+                    </div>
+                    <span>Projects Completed</span>
+                </h3>
+
+                <h3>
+                    <div class="flex">
+                        <span class="counter" data-target="99">0</span>
+                        <span class="symbol">%</span>
+                    </div>
+                    <span>Client Satisfaction</span>
+                </h3>
+            </div>
+        </div>
+
+        <div class="location_content">
+            <h1>Location</h1>
+        </div>
+
         
     </div>
 

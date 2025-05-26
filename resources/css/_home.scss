@@ -6,6 +6,7 @@
         background-repeat: no-repeat;
         background-position:top;
         height: 90vh;
+        margin: 0 0 3em;
 
         .hero_content{
             @include flex_center;

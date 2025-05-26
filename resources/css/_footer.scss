@@ -28,10 +28,6 @@
                 a{
                     @include anchor;
                     color: $background-color;
-    
-                    &:hover{
-                        color: $accent-color;
-                    }
                 }
             }
         }

@@ -319,7 +319,7 @@ form button {
   border-radius: 8px;
   font-size: 1.1em;
   color: #Fbfffe;
-  background: #d2691e;
+  background: #001514;
   cursor: pointer;
   font-weight: 550;
 }
@@ -501,9 +501,6 @@ form .group {
   color: #001514;
   color: #Fbfffe;
 }
-.footer_container .footer_content .footer_links .links a:hover {
-  color: #d2691e;
-}
 .footer_container .footer_content .footer_social .social_media {
   display: flex;
   align-items: center;
@@ -528,7 +525,7 @@ form .group {
   top: 0;
   left: 0;
   padding: 0.5em;
-  border-right: 2px solid #d2691e;
+  border-right: 2px solid #0b0bec;
 }
 .aside_container .aside_logo {
   display: flex;
@@ -664,6 +661,7 @@ form .group {
   background-repeat: no-repeat;
   background-position: top;
   height: 90vh;
+  margin: 0 0 3em;
 }
 .home_container .hero_container .hero_content {
   display: flex;
@@ -792,6 +790,7 @@ form .group {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5em;
+  margin: 3em 0;
 }
 @media screen and (width > 726px) {
   .about_container .about_history {
@@ -810,9 +809,51 @@ form .group {
   align-items: center;
 }
 .about_container .about_history .about_image img {
-  width: 90%;
-  height: 65vh;
+  width: 85%;
+  height: 55vh;
   border-radius: 24px;
+}
+.about_container .expirence_infor {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+  padding: 1.2em 0;
+  gap: 3em;
+}
+@media screen and (width > 726px) {
+  .about_container .expirence_infor {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.about_container .expirence_infor h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 2px 2px 10px #001514;
+  background-color: #Fbfffe;
+  padding: 0.4em;
+  border-radius: 12px;
+}
+.about_container .expirence_infor h3 .flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: row;
+  color: #0b0bec;
+}
+.about_container .expirence_infor h3 .flex .symbol {
+  font-size: 1.2em;
+  padding: 0 0.2em;
+}
+.about_container .expirence_infor h3 .counter {
+  font-size: 2em;
+}
+.about_container .location_content {
+  margin: 3em 0;
 }
 
 @media screen and (width <= 726px) {
