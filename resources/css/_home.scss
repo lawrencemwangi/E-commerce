@@ -1,6 +1,6 @@
 .home_container{
     .hero_container{
-        background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3))
+        background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.3))
                             ,url('/public/assets/images/img2.jpg');
         background-size:cover;
         background-repeat: no-repeat;
@@ -18,7 +18,14 @@
             
             h1{
                 color: $background-color;
-                padding-bottom: 0.9em;
+                font-size: 3em;
+            }
+
+            p{
+                color: $background-color;
+                font-size: 1.3em;
+                padding: 0.5em;
+                font-weight: 550;
             }
 
             .button{

@@ -4,9 +4,8 @@
     <div class="home_container">
         <div class="hero_container">
             <div class="hero_content">
-                <h1>Welcome to {{ config('site_settings.site_name') }} for the best decor to make  
-                    you house and office to have a good design and look  
-                </h1>
+                <h1>Welcome to {{ config('site_settings.site_name') }}</h1>
+                <p>Elegant, handcrafted epoxy designs for your space.</p>
 
                 <div class="button">
                     <a href="{{ route('collection') }}">Our Collection</a>
