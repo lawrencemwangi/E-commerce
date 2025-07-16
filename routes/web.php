@@ -7,7 +7,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
-
+use App\Http\Controllers\CollectionController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', [HomeController::class, 'HomePage'])->name('home');
 Route::get('/about', [HomeController::class, 'AboutPage'])->name('about');
@@ -29,6 +30,8 @@ Route::middleware('auth','admin')->group(function (){
     Route::resource('admin/messages', MessagesController::class)->except('create', 'store');
     Route::resource('admin/users', UserController::class);
     Route::resource('admin/blog', BlogController::class);
+    Route::resource('admin/collection', CollectionController::class);
+    Route::resource('admin/category', CategoryController::class);
 });
 
 

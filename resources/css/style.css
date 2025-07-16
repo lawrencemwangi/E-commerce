@@ -47,16 +47,11 @@ html {
 }
 
 .header {
-  padding: 0.9em 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5em;
+  display: flex;
   align-items: center;
-}
-@media screen and (width > 726px) {
-  .header {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  justify-content: center;
+  justify-content: space-between;
+  padding: 0.9em;
 }
 .header .search input {
   padding: 0.5em 2em;
@@ -76,6 +71,25 @@ html {
   padding: 0.5em 1.2em;
   color: #Fbfffe;
   border-radius: 8px;
+}
+
+.link_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: left;
+  gap: 0.9em;
+  padding: 0.4em;
+}
+.link_container .link_content {
+  background: #001514;
+  padding: 0.3em 0.4em;
+  border-radius: 4px;
+}
+.link_container .link_content a {
+  text-decoration: none;
+  color: #001514;
+  color: #Fbfffe;
 }
 
 .user_container .user_content {
@@ -319,7 +333,7 @@ form button {
   border-radius: 8px;
   font-size: 1.1em;
   color: #Fbfffe;
-  background: #001514;
+  background: #0b0bec;
   cursor: pointer;
   font-weight: 550;
 }
@@ -332,6 +346,55 @@ form .group {
   form .group {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+form .custom_radio_buttons {
+  display: flex;
+}
+form .custom_radio_buttons label {
+  padding: 0.3em 0.2em;
+  margin: 0.5em 0;
+  position: relative;
+  cursor: pointer;
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+form .custom_radio_buttons label .option_radio {
+  position: relative;
+  margin: 0 0.1em 0 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: auto;
+  border: unset;
+}
+form .custom_radio_buttons label .option_radio:before {
+  transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+  transform: scale(0, 0);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0.125rem;
+  z-index: 1;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: #16a085;
+  border-radius: 50%;
+}
+form .custom_radio_buttons label .option_radio:checked:before {
+  transform: scale(1, 1);
+}
+form .custom_radio_buttons label .option_radio:after {
+  content: "";
+  position: absolute;
+  top: -0.25rem;
+  left: -0.125rem;
+  width: 1rem;
+  height: 1rem;
+  background: #fff;
+  border: 2px solid #d6d6d6;
+  border-radius: 50%;
 }
 
 .authentication_container {
@@ -367,55 +430,6 @@ form .group {
   font-weight: 500;
   padding: 0.5em 0;
   font-size: 0.95em;
-}
-.authentication_container form .custom_radio_buttons {
-  display: flex;
-}
-.authentication_container form .custom_radio_buttons label {
-  padding: 0.3em 0.2em;
-  margin: 0.5em 0;
-  position: relative;
-  cursor: pointer;
-  width: 30%;
-  display: flex;
-  align-items: center;
-}
-.authentication_container form .custom_radio_buttons label .option_radio {
-  position: relative;
-  margin: 0 0.1em 0 0;
-  cursor: pointer;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: auto;
-  border: unset;
-}
-.authentication_container form .custom_radio_buttons label .option_radio:before {
-  transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
-  transform: scale(0, 0);
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0.125rem;
-  z-index: 1;
-  width: 0.75rem;
-  height: 0.75rem;
-  background: #16a085;
-  border-radius: 50%;
-}
-.authentication_container form .custom_radio_buttons label .option_radio:checked:before {
-  transform: scale(1, 1);
-}
-.authentication_container form .custom_radio_buttons label .option_radio:after {
-  content: "";
-  position: absolute;
-  top: -0.25rem;
-  left: -0.125rem;
-  width: 1rem;
-  height: 1rem;
-  background: #fff;
-  border: 2px solid #d6d6d6;
-  border-radius: 50%;
 }
 
 @media screen and (width <= 726px) {
@@ -572,7 +586,7 @@ form .group {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin: 5em 0;
+  margin: 9em 0;
   text-align: center;
 }
 .aside_container .user .image {

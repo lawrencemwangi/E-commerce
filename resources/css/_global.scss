@@ -51,9 +51,9 @@ html{
 
 
 .header{
-    padding: 0.9em 0;
-    @include grid(3);
-    align-items: center;
+    @include flex_center;
+    justify-content: space-between;
+    padding:0.9em;
 
     .search{
         input{
@@ -83,5 +83,25 @@ html{
             }
         }
         
+    }
+}
+
+
+.link_container{
+    @include flex_center;
+    justify-content:left;
+    gap: 0.9em;
+    padding: 0.4em;
+    
+    .link_content{
+        background: $text-color;
+        padding: 0.3em 0.4em;
+        border-radius: 4px;
+
+        a{
+            @include anchor;
+            color: $background-color;
+
+        }
     }
 }

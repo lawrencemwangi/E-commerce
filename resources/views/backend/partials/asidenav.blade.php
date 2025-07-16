@@ -21,10 +21,10 @@
                     </a>
                 </li>
 
-                <li class="{{ request()->routeIs('users.*') ? 'active' : '' }}">
-                    <a href="#">
+                <li class="{{ request()->routeIs('collection.*') ? 'active' : '' }}">
+                    <a href="{{ route('collection.index') }}">
                         <i class="fas fa-tools"></i>
-                        <span>Services</span>
+                        <span>Collection</span>
                     </a>
                 </li>
 
@@ -32,13 +32,6 @@
                     <a href="#">
                         <i class="fas fa-shopping-cart"></i>
                         <span>Orders</span>
-                    </a>
-                </li>
-
-                <li class="{{ request()->routeIs('users.*') ? 'active' : '' }}">
-                    <a href="#">
-                        <i class="fas fa-code-branch"></i>
-                        <span>Projects</span>
                     </a>
                 </li>
 
