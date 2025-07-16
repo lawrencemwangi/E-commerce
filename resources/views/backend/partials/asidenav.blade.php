@@ -35,6 +35,13 @@
                     </a>
                 </li>
 
+                <li class="{{ request()->routeIs('stock.*') ? 'active' : '' }}">
+                    <a href="{{ route('stock.index') }}">
+                        <i class="fas fa-warehouse"></i>
+                        <span>Stock</span>
+                    </a>
+                </li>
+
                 <li class="{{ request()->routeIs('blog.*') ? 'active' : '' }}">
                     <a href="{{ route('blog.index') }}">
                         <i class="fas fa-blog"></i>

@@ -92,6 +92,44 @@ html {
   color: #Fbfffe;
 }
 
+.status_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+.status_container .status_content {
+  background: #f1f1f1;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+.status_container .status_content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.status_container .status_content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #f00920;
+}
+.status_container .status_content .btn_status a {
+  background-color: #0056b3;
+  color: #Fbfffe;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+.status_container .status_content .btn_status a:hover {
+  background-color: #0051a9;
+}
+
 .user_container .user_content {
   padding: 0.9em;
 }
@@ -333,7 +371,7 @@ form button {
   border-radius: 8px;
   font-size: 1.1em;
   color: #Fbfffe;
-  background: #0b0bec;
+  background: #0056b3;
   cursor: pointer;
   font-weight: 550;
 }
@@ -539,7 +577,7 @@ form .custom_radio_buttons label .option_radio:after {
   top: 0;
   left: 0;
   padding: 0.5em;
-  border-right: 2px solid #0b0bec;
+  border-right: 2px solid #0056b3;
 }
 .aside_container .aside_logo {
   display: flex;
@@ -586,7 +624,7 @@ form .custom_radio_buttons label .option_radio:after {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin: 9em 0;
+  margin: 6em 0;
   text-align: center;
 }
 .aside_container .user .image {
@@ -791,7 +829,7 @@ form .custom_radio_buttons label .option_radio:after {
   padding: 0.3em;
 }
 .home_container .collection_container .collection_item .collection_infor .title p {
-  background: #f7f4f4;
+  background: #f1f1f1;
   border-radius: 8px;
 }
 .home_container .collection_container .collection_item .collection_infor .title p a {
@@ -972,7 +1010,7 @@ form .custom_radio_buttons label .option_radio:after {
   align-items: center;
   justify-content: center;
   justify-content: row;
-  color: #0b0bec;
+  color: #0056b3;
 }
 .about_container .expirence_infor h3 .flex .symbol {
   font-size: 1.2em;
@@ -989,4 +1027,18 @@ form .custom_radio_buttons label .option_radio:after {
   .about_container .about_history .about_image {
     display: none;
   }
+}
+.user_container h2 {
+  padding: 0.5em 0;
+}
+.user_container ul {
+  list-style: none;
+  padding: 1.2em 0;
+}
+.user_container ul li {
+  padding: 0.5em 0;
+}
+.user_container ul li span {
+  padding: 0 0.4em;
+  font-weight: 550;
 }/*# sourceMappingURL=style.css.map */

@@ -105,3 +105,46 @@ html{
         }
     }
 }
+
+
+.status_container {
+    @include flex_center;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+
+    .status_content {
+        background: $expirence-color;
+        padding: 2rem;
+        width: 100%; 
+        max-width: 600px; 
+        border-radius: 10px; 
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: $danger-color;
+        }
+
+        .btn_status a {
+            background-color: $accent-color;
+            color: $background-color;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: darken($accent-color, 2%);
+            }
+        }
+    }
+}
+
