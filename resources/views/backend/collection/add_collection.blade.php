@@ -1,27 +1,34 @@
 <x-admin-layout>
     <div class="title">
         <h1> Add Collection</h1>
-    </div>
+    </div><br>
 
     <form action="{{ route('collection.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         
-        <div class="input_group">
-            <label for="title">Title</label>
-            <input type="text" name="title" id="title" value="{{ old('title') }}" placeholder="Enter the title">
-            <span class="inline_alert">{{ $errors->first('title') }}</span>                         
-        </div>
+
+       <div class="input_group">
+            <label for="item_id">Item Name</label>
+            <select name="item_id" id="item_id" onchange="updateStock(this)">
+                <option value="">-- Select Item --</option>
+                @foreach ($stocks as $stock)
+                    <option value="{{ $stock->id }}" {{ old('item_id') }} data-quantity="{{ $stock->quantity }}">
+                        {{ $stock->item_name }}
+                    </option>
+                @endforeach
+            </select>
+       </div>
 
         <div class="group">
             <div class="input_group">
-                <label for="category_id">Title</label>
+                <label for="category_id">Category Name</label>
                 <select name="category_id" id="category_id">
                     <option value="">-- Select Cateogry -- </option>
                     @foreach ($categories as $category)
-                        <option value="{{  $category->id }}">{{ old('category_id', $category->title ?? '') }}</option> 
+                        <option value="{{  $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->title }}</option> 
                     @endforeach
                 </select>
-                <span class="inline_alert">{{ $errors->first('title') }}</span>                         
+                <span class="inline_alert">{{ $errors->first('category_id') }}</span>                         
             </div>
 
             <div class="input_group">
@@ -74,7 +81,7 @@
 
                 <div class="input_group">
                     <label for="in_stock">Stock Value</label>
-                    <input type="number" name="in_stock" id="in_stock" min="1" value="{{ old('in_stock') }}" placeholder="Enter Stock value">
+                    <input type="number" name="in_stock" id="in_stock" min="1" value="{{ old('in_stock', $stock->quantity) }}" readonly>
                     <span class="inline_alert">{{ $errors->first('in_stock') }}</span> 
                 </div>
         </div>
@@ -87,3 +94,20 @@
         <button type="submit">Save</button>
     </form>
 </x-admin-layout>
+
+{{-- <script>
+    function updateStock(selectElement) {
+        const selectedOption = selectElement.options[selectElement.selectedIndex];
+        const quantity = selectedOption.getAttribute('data-quantity');
+
+        document.getElementById('in_stock').value = quantity || 0;
+    }
+</script> --}}
+<script>
+    function updateStock(select) {
+        const selected = select.options[select.selectedIndex];
+        const quantity = selected.getAttribute('data-quantity');
+        document.getElementById('in_stock').value = quantity;
+        document.getElementById('in_stock_hidden').value = quantity;
+    }
+</script>

@@ -42,6 +42,13 @@
                     </a>
                 </li>
 
+                <li class="{{ request()->routeIs('#.*') ? 'active' : '' }}">
+                    <a href="#">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Assets</span>
+                    </a>
+                </li>
+
                 <li class="{{ request()->routeIs('blog.*') ? 'active' : '' }}">
                     <a href="{{ route('blog.index') }}">
                         <i class="fas fa-blog"></i>

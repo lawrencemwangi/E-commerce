@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Collection extends Model
 {
     protected $fillable = [
-        'title',
+        'item_id',
         'category_id',
         'price',
         'featured',
@@ -20,5 +20,21 @@ class Collection extends Model
     public function category()
     {
         return $this->belongsToMany(Category::class);
+    }
+
+    public function stock()
+    {
+        return $this->belongsToMany(Stock::class);
+    }
+
+    public function getImage()
+    {
+        if ($this->image && Storage::disk('public')->exists('collection/' . $this->image)) {
+            return Storage::url('collection/' . $this->image);
+
+        } else {
+            // Path to your placeholder image
+            return asset('assets/images/placeholder.gif');
+        }
     }
 }

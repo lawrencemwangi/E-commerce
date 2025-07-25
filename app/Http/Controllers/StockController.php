@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Stock;
 use Illuminate\Http\Request;
+use App\Http\Requests\StockRequest;
+
 
 class StockController extends Controller
 {
@@ -12,7 +14,8 @@ class StockController extends Controller
      */
     public function index()
     {
-        return view('backend.stock.list_stock');
+        $stocks = Stock::orderBy('created_at', 'asc')->get();
+        return view('backend.stock.list_stock', compact('stocks'));
     }
 
     /**
@@ -20,15 +23,20 @@ class StockController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.stock.add_stock');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StockRequest $request)
     {
-        //
+        Stock::create($request->validated());
+
+        return redirect()->route('stock.index')->with('success',[
+            'message' => 'Stock Item added sucessfully',
+            'duration' => $this->alert_message_duration,
+        ]);
     }
 
     /**
@@ -44,15 +52,21 @@ class StockController extends Controller
      */
     public function edit(Stock $stock)
     {
-        //
+        return view('backend.stock.update_stock', compact('stock'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Stock $stock)
+    public function update(StockRequest $request, Stock $stock)
     {
-        //
+        $stock->update($request->validated());
+
+        return redirect()->route('stock.index')->with('success',[
+            'message' => 'Stock Item Updated sucessfully',
+            'duration' => $this->alert_message_duration,
+        ]);
+
     }
 
     /**

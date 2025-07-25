@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('collections', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('item_id')->constrained('stocks')->onDelete('cascade');;
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->decimal('price', 10, 2);
             $table->tinyinteger('featured')->default(1);

@@ -46,6 +46,11 @@ html {
   font-weight: bold;
 }
 
+.text-col {
+  background: #f00920;
+  color: #Fbfffe;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -127,7 +132,7 @@ html {
   transition: background-color 0.3s;
 }
 .status_container .status_content .btn_status a:hover {
-  background-color: #0051a9;
+  background-color: rgb(0, 81.0994413408, 168.8);
 }
 
 .user_container .user_content {
@@ -624,7 +629,7 @@ form .custom_radio_buttons label .option_radio:after {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin: 6em 0;
+  margin: 5em 0;
   text-align: center;
 }
 .aside_container .user .image {

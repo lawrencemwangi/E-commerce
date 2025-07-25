@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->id();
+            $table->string('item_name');
+            $table->text('description')->nullable();
+            $table->integer('quantity')->default(0);
+            $table->integer('low_stock_alert');
             $table->timestamps();
         });
     }

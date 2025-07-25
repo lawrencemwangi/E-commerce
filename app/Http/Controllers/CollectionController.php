@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Collection;
-use App\Models\category;
+use App\Models\Category;
+use App\Models\Stock;
 use Illuminate\Http\Request;
+use App\Http\Requests\CollectionRequest;
+use Illuminate\Support\Str;
+
 
 class CollectionController extends Controller
 {
@@ -22,15 +26,28 @@ class CollectionController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('backend.collection.add_collection', compact('categories'));
+        $stocks = Stock::all();
+        return view('backend.collection.add_collection', compact('categories', 'stocks'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CollectionRequest $request)
     {
-        //
+        $collection = Collection::create($request->validated());
+         
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = Str::random(5) . '.' . $image->getClientOriginalExtension();            
+            $imagePath = $image->storeAs('collection', $imageName, 'public');
+            $collection->image = $imageName;        
+        }
+
+        return redirect()->route('collection.index')->with('success', [
+            'message' => 'collection added successfully',
+            'duration' => $this->alert_message_duration,
+        ]);
     }
 
     /**
