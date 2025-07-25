@@ -17,16 +17,15 @@ class Collection extends Model
         'image',
     ];
 
-    public function category()
-    {
-        return $this->belongsToMany(Category::class);
-    }
-
     public function stock()
     {
-        return $this->belongsToMany(Stock::class);
+        return $this->belongsTo(Stock::class, 'item_id');
     }
 
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
     public function getImage()
     {
         if ($this->image && Storage::disk('public')->exists('collection/' . $this->image)) {

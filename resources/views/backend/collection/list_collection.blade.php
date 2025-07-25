@@ -9,24 +9,26 @@
                 <span class="user-col">Category</span>
                 <span class="user-col">Price</span>
                 <span class="user-col">Visibility</span>
+                <span class="user-col">Featured</span>
                 <span class="user-col">In Stock</span>
                 <span class="user-col">Action</span>
             </div>
              
-            {{-- @if (empty($users))
-                <p>No User Found at the moment</p> 
+            @if (empty($collections))
+                <p>No Collection Found at the moment</p> 
             @else
-                @foreach ($users as $user) --}}
+                @foreach ($collections as $collection)
                     <div class="user_infor">
-                        <span class="user-col">#</span>
-                        <span class="user-col">#</span>
-                        <span class="user-col">#</span>
-                        <span class="user-col">#</span>
-                        <span class="user-col">#</span>
-                        {{-- <span class="user-col"> <strong>{{ $user->user_level  == 1 ? 'Admin' : 'User'}}</strong></span>
-                        <span class="user-col {{ $user->status == 1 ? 'text-success' : 'text-danger' }}">
-                            {{ $user->status == 1 ? 'Active' : 'Inactive' }}
-                        </span> --}}
+                        <span class="user-col">{{ $collection->stock->item_name }}</span>
+                        <span class="user-col">{{ $collection->category->title }}</span>
+                        <span class="user-col">{{ $collection->price }}</span>
+                        <span class="user-col {{ $collection->visibility == 1 ? 'text-success' : 'text-danger' }}">
+                            {{ $collection->visibility == 1 ? 'Yes' : 'No' }}
+                        </span>
+                        <span class="user-col {{ $collection->featured == 1 ? 'text-success' : 'text-danger' }}">
+                            {{ $collection->featured == 1 ? 'Active' : 'Inactive' }}
+                        </span>
+                        <span class="user-col">{{ $collection->in_stock }}</span>
                         
                         <span class="action">
                             <a href="#">
@@ -34,8 +36,8 @@
                             </a>
                         </span>
                     </div>
-                {{-- @endforeach
-            @endif       --}}
+                @endforeach
+            @endif      
         </div>
     </div>
 </x-admin-layout>

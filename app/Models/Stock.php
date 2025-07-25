@@ -12,4 +12,9 @@ class Stock extends Model
         'low_stock_alert',
         'description',
     ];
+
+    public function collections()
+    {
+        return $this->hasMany(Collection::class);
+    }
 }

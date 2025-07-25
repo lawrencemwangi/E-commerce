@@ -17,7 +17,8 @@ class CollectionController extends Controller
      */
     public function index()
     {
-        return view('backend.collection.list_collection');
+        $collections = Collection::all();
+        return view('backend.collection.list_collection', compact('collections'));
     }
 
     /**
