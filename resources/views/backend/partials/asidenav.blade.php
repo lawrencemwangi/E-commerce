@@ -23,7 +23,7 @@
 
                 <li class="{{ request()->routeIs('collection.*') ? 'active' : '' }}">
                     <a href="{{ route('collection.index') }}">
-                        <i class="fas fa-tools"></i>
+                        <i class="fas fa-layer-group"></i>
                         <span>Collection</span>
                     </a>
                 </li>
@@ -42,8 +42,8 @@
                     </a>
                 </li>
 
-                <li class="{{ request()->routeIs('#.*') ? 'active' : '' }}">
-                    <a href="#">
+                <li class="{{ request()->routeIs('assets.*') ? 'active' : '' }}">
+                    <a href="{{ route('assets.index') }}">
                         <i class="fas fa-folder-open"></i>
                         <span>Assets</span>
                     </a>

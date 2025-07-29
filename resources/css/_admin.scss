@@ -13,20 +13,21 @@
         padding-left: 0.9em;
 
         .admin_dashboard{
-            @include grid(5);
-            gap: 0.9em;
-            padding: 0.8em;
+            // *{border: 2px solid $accent-color}
+            @include grid(4);
+            gap: 1.5em;
+            padding: 0.8em 0;
 
             .admin_items{
                 @include flex_center;
                 gap: 1em;
                 background: $text-color;
-                padding: 0.4em;
+                padding: 0.5em 0.1em;
                 border-radius: 16px;
                 color: $background-color;
 
                 i,p,span{
-                    font-size: 1.1em;
+                    font-size: 1em;
                 }
 
                 span{

@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <p>Welcome <strong>{{ Auth::check() ? Auth::user()->user_level_label : 'Guest'}}</strong>
+    <p>Welcome Back <strong>{{ Auth::check() ? Auth::user()->user_level_label : 'Guest'}}</strong>
         <strong>{{  Auth::user()->names}}</strong>
     </p>
 
@@ -14,23 +14,23 @@
             </div>
             
             <div class="admin_items">
-                <i class="fa fa-chalkboard-teacher"></i>
+                <i class="fas fa-layer-group"></i>
                 <div class="details">
-                    <p>Teachers</p>
-                    <span>#</span>
+                    <p>Collection</p>
+                    <span>{{ $Count_collection }}</span>
                 </div>
             </div>
             
             <div class="admin_items">
-                <i class="fa fa-child"></i>
+                <i class="fas fa-warehouse"></i>
                 <div class="details">
-                    <p>Parents</p>
-                    <span>#</span>
+                    <p>Stock</p>
+                    <span>{{ $Count_stock }}</span>
                 </div>
             </div>
 
             <div class="admin_items">
-                <i class="fa fa-school"></i>
+                <i class="fas fa-comments"></i>
                 <div class="details">
                     <p>Messages</p>
                     <span>{{ $Count_messages }}</span>
@@ -38,10 +38,18 @@
             </div>
 
             <div class="admin_items">
-                <i class="fa fa-bed"></i>
+                <i class="fas fa-folder-open"></i>
                 <div class="details">
-                    <p>Dorms</p>
-                    <span>#</span>
+                    <p>Assets</p>
+                    <span>{{ $Count_assets }}</span>
+                </div>
+            </div>
+
+            <div class="admin_items">
+                <i class="fas fa-folder"></i>
+                <div class="details">
+                    <p>Assets Value</p>
+                    <span>{{ number_format($total_assets,2) }}</span>
                 </div>
             </div>
 

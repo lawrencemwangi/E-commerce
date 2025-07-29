@@ -15,7 +15,8 @@ class StockController extends Controller
     public function index()
     {
         $stocks = Stock::orderBy('created_at', 'asc')->get();
-        return view('backend.stock.list_stock', compact('stocks'));
+        $low_stock = Stock::where('quantity', '<=', 10)->count();
+        return view('backend.stock.list_stock', compact('stocks', 'low_stock'));
     }
 
     /**

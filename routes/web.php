@@ -11,6 +11,7 @@ use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\AssetController;
 
 Route::get('/', [HomeController::class, 'HomePage'])->name('home');
 Route::get('/about', [HomeController::class, 'AboutPage'])->name('about');
@@ -37,6 +38,7 @@ Route::middleware('auth','admin', 'status')->group(function (){
     Route::resource('admin/collection', CollectionController::class);
     Route::resource('admin/category', CategoryController::class);
     Route::resource('admin/stock', StockController::class);
+    Route::resource('admin/assets', AssetController::class);
 });
 
 require __DIR__.'/auth.php';

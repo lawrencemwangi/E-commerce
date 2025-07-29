@@ -1,5 +1,8 @@
 <x-admin-layout>
-    {{-- <x-header title="Dorms" addLink="#"/> --}}
+    {{-- <x-header title="Messages" addLink="#"/> --}}
+    <div class="title">
+        <h1>Messages</h1>
+    </div>
 
     <div class="message_container user_container">
         <div class="user_content">

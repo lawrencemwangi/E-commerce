@@ -2,6 +2,8 @@
         <x-header title="Stock" addLink="{{ route('stock.create') }}"/>
 
     <div class="container user_container">
+        <p>The total number of items that need to be restocked as at <strong>{{ date('F j, Y') }} </strong> is <strong>{{ $low_stock }}</strong> Item (s)</p>
+
         <div class="user_content">
             <div class="user_details">
                 <span  class="user-col">Item Names</span>

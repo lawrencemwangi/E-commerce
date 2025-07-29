@@ -621,7 +621,7 @@ form .custom_radio_buttons label .option_radio:after {
   align-items: center;
   text-decoration: none;
   color: #001514;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 .aside_container .user {
   display: flex;
@@ -652,7 +652,7 @@ form .custom_radio_buttons label .option_radio:after {
   text-decoration: none;
   color: #001514;
   font-weight: 550;
-  font-size: 1em;
+  font-size: 0.9em;
 }
 .aside_container .user p {
   padding: 0.3em 0;
@@ -685,12 +685,12 @@ form .custom_radio_buttons label .option_radio:after {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5em;
-  gap: 0.9em;
-  padding: 0.8em;
+  gap: 1.5em;
+  padding: 0.8em 0;
 }
 @media screen and (width > 726px) {
   .admin_container .dashboard_infor .admin_dashboard {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 .admin_container .dashboard_infor .admin_dashboard .admin_items {
@@ -699,12 +699,12 @@ form .custom_radio_buttons label .option_radio:after {
   justify-content: center;
   gap: 1em;
   background: #001514;
-  padding: 0.4em;
+  padding: 0.5em 0.1em;
   border-radius: 16px;
   color: #Fbfffe;
 }
 .admin_container .dashboard_infor .admin_dashboard .admin_items i, .admin_container .dashboard_infor .admin_dashboard .admin_items p, .admin_container .dashboard_infor .admin_dashboard .admin_items span {
-  font-size: 1.1em;
+  font-size: 1em;
 }
 .admin_container .dashboard_infor .admin_dashboard .admin_items span {
   display: flex;
@@ -1035,6 +1035,10 @@ form .custom_radio_buttons label .option_radio:after {
 }
 .user_container h2 {
   padding: 0.5em 0;
+}
+.user_container p {
+  padding: 0.4em 0.8em;
+  font-size: 1.1em;
 }
 .user_container ul {
   list-style: none;

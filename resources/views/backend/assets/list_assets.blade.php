@@ -1,22 +1,25 @@
 <x-admin-layout>
-    @include('backend.partials.link')
-    <x-header title="Category" addLink="{{ route('category.create') }}"/>
+    <x-header title="Assets" addLink="{{ route('assets.create') }}"/>
     
     <div class="container user_container">
+        <p>The total asset value As of <strong>{{ date('F j, Y') }} </strong> is <strong>{{ number_format($asset_total, 2) }}</strong></p><br>
+
         <div class="user_content">
             <div class="user_details">
-                <span  class="user-col">Title</span>
-                <span class="user-col">Slug</span>
+                <span  class="user-col">Item</span>
+                <span class="user-col">Quantity</span>
+                <span class="user-col">Price</span>
                 <span class="user-col">Action</span>
             </div>
              
-            @if (empty($categories))
-                <p>No User Found at the moment</p> 
+            @if (empty($assets))
+                <p>No Assets Found at the moment</p> 
             @else
-                @foreach ($categories as $category)
+                @foreach ($assets as $asset)
                     <div class="user_infor">
-                        <span class="user-col">{{ $category->title }}</span>
-                        <span class="user-col">{{ $category->slug }}</span>
+                        <span class="user-col">{{ $asset->title }}</span>
+                        <span class="user-col">{{ $asset->quantity }}</span>
+                         <span class="user-col">{{ $asset->price }}</span> 
                         <span class="action">
                             <a href="#">
                                 <i class="fas fa-pencil-alt"></i>
