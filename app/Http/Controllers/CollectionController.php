@@ -42,7 +42,8 @@ class CollectionController extends Controller
             $image = $request->file('image');
             $imageName = Str::random(5) . '.' . $image->getClientOriginalExtension();            
             $imagePath = $image->storeAs('collection', $imageName, 'public');
-            $collection->image = $imageName;        
+            $collection->image = $imageName;  
+            $collection->save();      
         }
 
         return redirect()->route('collection.index')->with('success', [
@@ -82,4 +83,17 @@ class CollectionController extends Controller
     {
         //
     }
+
+
+    public function filter_collection($category_slug)
+    {
+        $categories = Category::all();
+        $category = Category::where('slug', $category_slug)->firstOrFail();
+
+        $collections = $category->collection ?? collect();
+        $collectionCount = $collections->count();
+
+        return view('filter_collection', compact('collections', 'category', 'categories', 'collectionCount'));
+    }
+
 }

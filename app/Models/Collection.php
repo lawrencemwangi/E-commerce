@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
+
 
 class Collection extends Model
 {
@@ -26,6 +28,12 @@ class Collection extends Model
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
+
+    public function message()
+    {
+        return $this->belongsTo(Message::class);
+    }
+
     public function getImage()
     {
         if ($this->image && Storage::disk('public')->exists('collection/' . $this->image)) {

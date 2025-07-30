@@ -11,9 +11,9 @@
         <div class="footer_links">
             <h3>Links</h3>
             <div class="links">
-                <a href="{{ route('collection') }}">Shop</a>
+                <a href="{{ route('collection') }}">Collection</a>
                 <a href="{{ route('contact') }}">Contact</a>
-                <a href="{{ route('blog') }}">blog</a>
+                <a href="{{ route('quotation') }}">Get Quotation</a>
             </div>
         </div>
     

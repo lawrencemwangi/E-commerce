@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Messages;
+use App\Models\Collection;
 use Illuminate\Http\Request;
 
 class MessagesController extends Controller
@@ -78,5 +79,12 @@ class MessagesController extends Controller
     public function destroy(Messages $messages)
     {
         //
+    }
+
+
+    public function GetQuotation()
+    {
+        $collections = Collection::all();
+        return view('get_quotation', compact('collections'));
     }
 }

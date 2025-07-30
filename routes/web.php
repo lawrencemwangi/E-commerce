@@ -16,10 +16,12 @@ use App\Http\Controllers\AssetController;
 Route::get('/', [HomeController::class, 'HomePage'])->name('home');
 Route::get('/about', [HomeController::class, 'AboutPage'])->name('about');
 Route::get('/collection', [HomeController::class, 'CollectionPage'])->name('collection');
+Route::get('/collection/category/{category_slug}', [CollectionController::class, 'filter_collection'])->name('byCategory');
 Route::get('/contact', [HomeController::class, 'ContactPage'])->name('contact');
 Route::post('/contact', [MessagesController::class, 'store'])->name('messages.store');
 Route::get('/blog', [HomeController::class, 'BlogPage'])->name('blog');
 Route::get('/status', [StatusController::class, 'StatusPage'])->name('status')->middleware('web');
+Route::get('contact/get_quotation', [MessagesController::class, 'GetQuotation'])->name('quotation');
 
 
 

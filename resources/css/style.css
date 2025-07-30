@@ -741,18 +741,24 @@ form .custom_radio_buttons label .option_radio:after {
   font-weight: 550;
 }
 .home_container .hero_container .hero_content .button {
-  border: none;
-  padding: 0.6em 1.5em;
-  border-radius: 8px;
-  font-size: 1.1em;
-  background: #001514;
   cursor: pointer;
   font-weight: 550;
+  padding: 2em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
 }
 .home_container .hero_container .hero_content .button a {
   text-decoration: none;
   color: #001514;
   color: #Fbfffe;
+  background: #001514;
+  border: none;
+  padding: 0.6em 1.5em;
+  border-radius: 8px;
+  font-size: 1.1em;
+  margin: 0.9em 0;
 }
 .home_container .content_container h2 {
   font-size: 1.8em;
@@ -783,74 +789,6 @@ form .custom_radio_buttons label .option_radio:after {
   color: #001514;
   box-shadow: 2px 3px 3px #001514;
 }
-.home_container .collection_container .header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-between;
-  padding: 0.8em 0.3em;
-}
-.home_container .collection_container .header .link {
-  background: #001514;
-  padding: 0.4em 1.2em;
-  border-radius: 8px;
-}
-.home_container .collection_container .header .link a {
-  text-decoration: none;
-  color: #001514;
-  color: #Fbfffe;
-}
-.home_container .collection_container .collection_item {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5em;
-  gap: 1.8em;
-}
-@media screen and (width > 726px) {
-  .home_container .collection_container .collection_item {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-.home_container .collection_container .collection_item .collection_infor {
-  box-shadow: 2px 3px 3px #001514;
-  padding: 0.9em;
-  border-radius: 12px;
-}
-.home_container .collection_container .collection_item .collection_infor .img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.home_container .collection_container .collection_item .collection_infor .img img {
-  width: 95%;
-  height: 35vh;
-  border-radius: 8px;
-}
-.home_container .collection_container .collection_item .collection_infor .title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-between;
-  padding: 0.3em;
-}
-.home_container .collection_container .collection_item .collection_infor .title p {
-  background: #f1f1f1;
-  border-radius: 8px;
-}
-.home_container .collection_container .collection_item .collection_infor .title p a {
-  text-decoration: none;
-  color: #001514;
-  padding: 0 0.3em;
-  font-size: 1.1em;
-}
-.home_container .collection_container .collection_item .collection_infor .price {
-  padding: 0.3em;
-  font-size: 1.2em;
-}
-.home_container .collection_container .collection_item .collection_infor .price span {
-  font-weight: bold;
-  color: #28a745;
-}
 
 @media screen and (width <= 726px) {
   .home_container .hero_container {
@@ -869,12 +807,6 @@ form .custom_radio_buttons label .option_radio:after {
   }
   .home_container .content_container h2 {
     font-size: 1.3em;
-  }
-  .home_container .collection_container {
-    margin: 0 0.6em;
-  }
-  .home_container .collection_container .header h1 {
-    font-size: 1.5em;
   }
 }
 .contact_container {
@@ -896,6 +828,17 @@ form .custom_radio_buttons label .option_radio:after {
   font-size: 1.5em;
   font-weight: bold;
   gap: 0.3em;
+}
+.contact_container .contact_infor .quotation {
+  padding: 0.9em 0;
+}
+.contact_container .contact_infor .quotation a {
+  text-decoration: none;
+  color: #001514;
+  background-color: #001514;
+  color: #Fbfffe;
+  padding: 0.4em 1.1em;
+  border-radius: 12px 0 12px 0;
 }
 .contact_container .contact_form .input_group .input_content {
   position: relative;
@@ -1050,4 +993,69 @@ form .custom_radio_buttons label .option_radio:after {
 .user_container ul li span {
   padding: 0 0.4em;
   font-weight: 550;
+}
+
+.collection_container {
+  padding: 0.5em;
+  margin: 0.9em;
+}
+.collection_container .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 0.8em 0.3em;
+}
+.collection_container .header .link {
+  background: #001514;
+  padding: 0.4em 1.2em;
+  border-radius: 8px;
+}
+.collection_container .header .link a {
+  text-decoration: none;
+  color: #001514;
+  color: #Fbfffe;
+}
+.collection_container .collection_infor {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+  padding: 0.9em 0;
+}
+@media screen and (width > 726px) {
+  .collection_container .collection_infor {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.collection_container .collection_infor .collection_contents {
+  box-shadow: 2px 2px 4px #001514;
+  padding: 0.5em;
+  border-radius: 8px;
+}
+.collection_container .collection_infor .collection_contents .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.collection_container .collection_infor .collection_contents .image img {
+  width: 95%;
+  height: 35vh;
+}
+.collection_container .collection_infor .collection_contents .collection_items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 0.4em;
+}
+.collection_container .collection_infor .collection_contents .title, .collection_container .collection_infor .collection_contents p {
+  padding: 0.2em;
+}
+.collection_container .collection_infor .collection_contents .item_content p span {
+  color: #28a745;
+  font-weight: bold;
+}
+.collection_container .collection_infor .collection_contents .item_content i {
+  color: #001514;
+  font-size: 1.5em;
 }/*# sourceMappingURL=style.css.map */

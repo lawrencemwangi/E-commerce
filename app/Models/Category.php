@@ -11,5 +11,8 @@ class Category extends Model
         'slug',
     ];
 
-    
+    public function collection()
+    {
+        return $this->hasMany(Collection::class);
+    }
 }

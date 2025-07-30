@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Collection;
+use App\Models\Category;
 use Auth;
 
 class HomeController extends Controller
@@ -31,7 +33,13 @@ class HomeController extends Controller
 
     public function HomePage()
     {
-        return view('home');
+        $collections = Collection::where('featured', 1)
+                                ->where('visibility', 1)
+                                ->orderBy('created_at', 'asc')
+                                ->limit(4)
+                                ->get();
+
+        return view('home', compact('collections'));
     }
 
     public function AboutPage()
@@ -39,9 +47,16 @@ class HomeController extends Controller
         return view('about');
     }
 
+    
     public function CollectionPage()
     {
-        return view('collection');
+        $categories = Category::orderBy('created_at', 'asc')->get();
+        $collections = Collection::where('featured', 1)
+                                ->where('visibility', 1)
+                                ->orderBy('created_at', 'asc')
+                                ->get();
+
+        return view('collection', compact('collections', 'categories'));
     }
 
     public function ContactPage()
@@ -53,4 +68,6 @@ class HomeController extends Controller
     {
         return view('blog');
     }
+
+   
 }

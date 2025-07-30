@@ -1,0 +1,65 @@
+.collection_container{
+    padding: 0.5em;
+    margin:  0.9em;
+
+    .header{
+        @include flex_center;
+        justify-content: space-between;
+        padding: 0.8em 0.3em;
+
+        .link{
+            background: $text-color;
+            padding: 0.4em 1.2em;
+            border-radius: 8px;
+            
+            a{
+                @include anchor;
+                color: $background-color;
+            }
+        }
+    }
+    
+    .collection_infor{
+        @include grid(4);
+        padding: 0.9em 0;
+
+        .collection_contents{
+            box-shadow: 2px 2px 4px $text_color;
+            padding: 0.5em;
+            border-radius: 8px;
+
+            .image{
+                @include flex_center;
+
+                img{
+                    width:95%;
+                    height: 35vh;
+                }
+            }
+
+            .collection_items{
+                @include flex_center;
+                justify-content: space-between;
+                padding: 0.4em;
+            }
+
+            .title,p{
+                padding: 0.2em;
+            }
+
+            .item_content{
+                p{
+                    span{
+                        color: $success_color;
+                        font-weight: bold;
+                    }
+                }
+
+                i{
+                    color: $text_color;
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }   
+}

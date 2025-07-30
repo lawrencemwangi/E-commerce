@@ -29,17 +29,21 @@
             }
 
             .button{
-                border: none;
-                padding: 0.6em 1.5em;
-                border-radius: 8px;
-                font-size: 1.1em;
-                background: $text-color;
                 cursor: pointer;
                 font-weight: 550;
+                padding: 2em 0;
+                @include flex_center;
+                gap: 3em;
                 
                 a{
                     @include anchor;
-                    color:$background-color;                    
+                    color:$background-color;  
+                    background: $text-color;
+                    border: none;
+                    padding: 0.6em 1.5em;
+                    border-radius: 8px;
+                    font-size: 1.1em;
+                    margin: 0.9em 0;
                 }
             }
         }
@@ -74,71 +78,6 @@
         }
     }
 
-    .collection_container{
-        .header{
-            @include flex_center;
-            justify-content: space-between;
-            padding: 0.8em 0.3em;
-
-            .link{
-                background: $text-color;
-                padding: 0.4em 1.2em;
-                border-radius: 8px;
-                
-                a{
-                    @include anchor;
-                    color: $background-color;
-                }
-            }
-        }
-
-        .collection_item{
-            @include grid(3);
-            gap: 1.8em;
-            
-            .collection_infor{
-                box-shadow: 2px 3px 3px $text-color;
-                padding: 0.9em;
-                border-radius: 12px;
-
-                .img{
-                    @include flex_center;
-
-                    img{
-                        width: 95%;
-                        height: 35vh;
-                        border-radius: 8px;
-                    }
-                }
-
-                .title{
-                    @include flex_center;
-                    justify-content: space-between;
-                    padding: 0.3em;
-
-                    p{
-                        background: $expirence-color;
-                        border-radius: 8px;
-                        a{
-                            @include anchor;
-                            padding: 0 0.3em;
-                            font-size: 1.1em;
-                        }
-                    }
-                }
-
-                .price{
-                    padding: 0.3em;
-                    font-size: 1.2em;
-                    
-                    span{
-                        font-weight: bold;
-                        color: $success-color;
-                    }
-                }
-            }
-        }
-    }
 }
 
 
@@ -164,17 +103,6 @@
            h2{
                 font-size: 1.3em;
            } 
-        }
-
-        .collection_container{
-            margin: 0 0.6em;
-
-            .header{
-                h1{
-                    font-size: 1.5em;
-                }
-            }
-
         }
     }
 }

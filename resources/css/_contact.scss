@@ -8,6 +8,18 @@
         font-size: 1.5em;
         font-weight: bold;
         gap: 0.3em;
+
+        .quotation{
+            padding: 0.9em 0;
+
+            a{
+                @include anchor;
+                background-color: $text-color;
+                color: $background-color;
+                padding: 0.4em 1.1em;
+                border-radius: 12px 0 12px 0;
+            }
+        }
     }
 
     .contact_form{

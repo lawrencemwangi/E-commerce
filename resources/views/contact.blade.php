@@ -5,6 +5,9 @@
         <div class="contact_infor">
             <p>{{ config('site_settings.email') }}</p>
             <p>{{ config('site_settings.contact') }} </p>
+            <div class="quotation">
+                <a href="{{ route('quotation') }}">Get Quotation</a>
+            </div>
         </div>
         <div class="contact_form">
             <form action="{{ route('messages.store') }}" method="post">

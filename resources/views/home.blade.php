@@ -8,7 +8,13 @@
                 <p>Elegant, handcrafted epoxy designs for your space.</p>
 
                 <div class="button">
-                    <a href="{{ route('collection') }}">Our Collection</a>
+                    <div class="btn1">
+                        <a href="{{ route('collection') }}">Our Collection</a>
+                    </div>
+                    <div class="btn1">
+                        <a href="{{ route('contact') }}">Get Quotation</a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -41,39 +47,9 @@
                     <a href="{{ route('collection') }}">Collection</a>
                 </div>
             </div>
-            <div class="collection_item">
-                <div class="collection_infor">
-                    <div class="img">
-                        <img src="../assets/images/img3.jpg" alt="collect image">
-                    </div>
-                    <div class="title">
-                        <h2>Keychain</h2>
-                        <p><a href="#">chains</a></p>
-                    </div>
-                    <p class="price">Kshs. <span>250</span></p>
-                </div>
-
-                <div class="collection_infor">
-                    <div class="img">
-                        <img src="../assets/images/img3.jpg" alt="collect image">
-                    </div>
-                    <div class="title">
-                        <h2>Keychain</h2>
-                        <p><a href="#">chains</a></p>
-                    </div>
-                    <p class="price">Kshs. <span>250</span></p>
-                </div>
-
-                <div class="collection_infor">
-                    <div class="img">
-                        <img src="../assets/images/img3.jpg" alt="collect image">
-                    </div>
-                    <div class="title">
-                        <h2>Keychain</h2>
-                        <p><a href="#">chains</a></p>
-                    </div>
-                    <p class="price">Kshs. <span>250</span></p>
-                </div>
+            <div class="collection_infor">
+                @include('partials.list_collection')
+                   
             </div>
         </div>
     </div>
