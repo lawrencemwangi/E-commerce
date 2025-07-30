@@ -24,8 +24,8 @@
             
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('collection') }}">Collection</a></li>
-            <li><a href="{{ route('blog') }}">Blog</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>
+            <li><a href="{{ route('quotation') }}">Quotation</li>
 
             <li class="profile">
                 @if(Auth::user())

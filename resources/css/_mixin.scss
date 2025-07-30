@@ -9,7 +9,7 @@
     grid-template-columns: 1fr;
     gap: 1.5em;
 
-    @media screen and (width >726px){
+    @media screen and (width >=726px){
         grid-template-columns: repeat($columns, 1fr);
     }
 }

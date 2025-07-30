@@ -12,7 +12,7 @@
                         <a href="{{ route('collection') }}">Our Collection</a>
                     </div>
                     <div class="btn1">
-                        <a href="{{ route('contact') }}">Get Quotation</a>
+                        <a href="{{ route('quotation') }}">Get Quotation</a>
                     </div>
 
                 </div>

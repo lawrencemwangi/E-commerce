@@ -14,6 +14,7 @@
                 <a href="{{ route('collection') }}">Collection</a>
                 <a href="{{ route('contact') }}">Contact</a>
                 <a href="{{ route('quotation') }}">Get Quotation</a>
+                <a href="{{ route('blog') }}">Blog</a>
             </div>
         </div>
     

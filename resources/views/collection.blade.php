@@ -20,7 +20,7 @@
             </div>
 
             @if ($collections->isempty())
-                <p>No services found under this category.</p>
+                <p>No Collection found under this category.</p>
             @else
             <div class="collection_infor">
                 @include('partials.list_collection')

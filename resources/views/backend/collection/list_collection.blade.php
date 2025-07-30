@@ -21,7 +21,7 @@
                     <div class="user_infor">
                         <span class="user-col">{{ $collection->stock->item_name }}</span>
                         <span class="user-col">{{ $collection->category->title }}</span>
-                        <span class="user-col">{{ $collection->price }}</span>
+                        <span class="user-col">{{ number_format($collection->price, 2) }}</span>
                         <span class="user-col {{ $collection->visibility == 1 ? 'text-success' : 'text-danger' }}">
                             {{ $collection->visibility == 1 ? 'Yes' : 'No' }}
                         </span>
