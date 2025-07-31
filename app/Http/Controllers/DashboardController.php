@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Collection;
 use App\Models\Stock;
 use App\Models\Asset;
+use App\Models\Quotation;
 
 class DashboardController extends Controller
 {
@@ -18,6 +19,7 @@ class DashboardController extends Controller
       $Count_collection = Collection::count();
       $Count_stock = Stock::count();
       $Count_assets = Asset::count();
+      $Count_quotation = Quotation::count();
 
       // Calculation of the total assets value of the assets owned by the company
       $total_assets = Asset::sum('price');
@@ -29,6 +31,7 @@ class DashboardController extends Controller
          'Count_collection',
          'Count_stock',
          'Count_assets',
+         'Count_quotation',
 
          // total calculation
          'total_assets',

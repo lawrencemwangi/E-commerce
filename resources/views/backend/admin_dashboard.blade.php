@@ -49,7 +49,7 @@
                 <i class="fas fa-file-invoice-dollar"></i>
                 <div class="details">
                     <p>Quotations</p>
-                    <span>{{ $Count_messages }}</span>
+                    <span>{{ $Count_quotation }}</span>
                 </div>
             </div>
 
