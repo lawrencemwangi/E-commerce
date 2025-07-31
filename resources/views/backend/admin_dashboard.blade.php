@@ -46,6 +46,14 @@
             </div>
 
             <div class="admin_items">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <div class="details">
+                    <p>Quotations</p>
+                    <span>{{ $Count_messages }}</span>
+                </div>
+            </div>
+
+            <div class="admin_items">
                 <i class="fas fa-folder"></i>
                 <div class="details">
                     <p>Assets Value</p>

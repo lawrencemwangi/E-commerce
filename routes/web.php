@@ -12,6 +12,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\AssetController;
+use App\Http\Controllers\QuotationController;
 
 Route::get('/', [HomeController::class, 'HomePage'])->name('home');
 Route::get('/about', [HomeController::class, 'AboutPage'])->name('about');
@@ -21,7 +22,8 @@ Route::get('/contact', [HomeController::class, 'ContactPage'])->name('contact');
 Route::post('/contact', [MessagesController::class, 'store'])->name('messages.store');
 Route::get('/blog', [HomeController::class, 'BlogPage'])->name('blog');
 Route::get('/status', [StatusController::class, 'StatusPage'])->name('status')->middleware('web');
-Route::get('contact/get_quotation', [MessagesController::class, 'GetQuotation'])->name('quotation');
+Route::get('/get_quotation', [MessagesController::class, 'GetQuotation'])->name('quotation');
+Route::post('/get_quotation', [QuotationController::class, 'store'])->name('quotation.store');
 
 
 
@@ -41,6 +43,8 @@ Route::middleware('auth','admin', 'status')->group(function (){
     Route::resource('admin/category', CategoryController::class);
     Route::resource('admin/stock', StockController::class);
     Route::resource('admin/assets', AssetController::class);
+    Route::resource('admin/quotation', QuotationController::class)->except('store');
+    Route::get('admin/quotation/{quotation}/generate', [QuotationController::class, 'generateTemplate'])->name('quotation.generate');
 });
 
 require __DIR__.'/auth.php';

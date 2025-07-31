@@ -524,6 +524,7 @@ form .custom_radio_buttons label .option_radio:after {
 }
 .footer_container {
   background: #001514;
+  padding: 0 3%;
 }
 .footer_container .footer_content {
   display: grid;
@@ -629,7 +630,7 @@ form .custom_radio_buttons label .option_radio:after {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin: 5em 0;
+  margin: 4em 0;
   text-align: center;
 }
 .aside_container .user .image {
@@ -705,6 +706,7 @@ form .custom_radio_buttons label .option_radio:after {
 }
 .admin_container .dashboard_infor .admin_dashboard .admin_items i, .admin_container .dashboard_infor .admin_dashboard .admin_items p, .admin_container .dashboard_infor .admin_dashboard .admin_items span {
   font-size: 1em;
+  padding: 0.2em 0;
 }
 .admin_container .dashboard_infor .admin_dashboard .admin_items span {
   display: flex;
@@ -713,12 +715,32 @@ form .custom_radio_buttons label .option_radio:after {
 }
 
 .home_container .hero_container {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url("/public/assets/images/img2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  height: 90vh;
-  margin: 0 0 3em;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.home_container .hero_container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.home_container .hero_container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
 }
 .home_container .hero_container .hero_content {
   display: flex;
@@ -759,6 +781,9 @@ form .custom_radio_buttons label .option_radio:after {
   border-radius: 8px;
   font-size: 1.1em;
   margin: 0.9em 0;
+}
+.home_container .hero_container .hero_content .button a:hover {
+  box-shadow: 0.2px 0.2px 0.2px #Fbfffe;
 }
 .home_container .content_container h2 {
   font-size: 1.8em;
@@ -1094,4 +1119,77 @@ form .custom_radio_buttons label .option_radio:after {
   font-size: 0.8em;
   background-color: #f1f1f1;
   border-radius: 4px;
+}
+
+.quotation-container {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.quotation-container h1 {
+  text-align: center;
+  text-decoration: underline;
+}
+.quotation-container .quotation-card {
+  background: #Fbfffe;
+  padding: 2rem;
+  max-width: 900px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+.quotation-container .quotation-card .company-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.quotation-container .quotation-card .company-header img {
+  width: 65px;
+  height: 55px;
+  border-radius: 20%;
+}
+.quotation-container .quotation-card .client-info, .quotation-container .quotation-card .quotation-meta, .quotation-container .quotation-card .description {
+  margin: 1rem 0;
+}
+.quotation-container .quotation-card .item-table {
+  margin-top: 1.5rem;
+}
+.quotation-container .quotation-card .item-header, .quotation-container .quotation-card .item-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+.quotation-container .quotation-card .item-header {
+  background: #f9f9f9;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+.quotation-container .quotation-card .item-row {
+  border-bottom: 1px solid #eee;
+  font-size: 0.9em;
+}
+.quotation-container .quotation-card .quotation-footer {
+  padding: 1.5em 0 0 0;
+}
+
+.quotation-actions {
+  text-align: right;
+  margin: 2rem 0;
+}
+.quotation-actions .btn {
+  background: #001514;
+  color: #Fbfffe;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+.quotation-actions .btn.whatsapp {
+  background-color: #28a745;
 }/*# sourceMappingURL=style.css.map */

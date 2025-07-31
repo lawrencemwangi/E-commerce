@@ -25,7 +25,6 @@ class CollectionRequest extends FormRequest
         $collection = $this->route('collection');
         return [
             'item_id' => ['required','exists:stocks,id'],
-
             'category_id' => ['required','exists:categories,id'],
             'image' => ['required','image','max:2048','mimes:jpg,jpeg,png,gif,svg',],
             'price' => ['required', 'numeric', 'min:0'],

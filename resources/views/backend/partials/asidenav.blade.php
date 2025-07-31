@@ -2,7 +2,7 @@
     <div class="aside_container">
         <div class="aside_logo">
             <img src="{{ asset('assets/images/logo.jpeg') }}" width="40px" height="40px" alt="logo">
-            <a href="{{ route('home')}}" target="_blank">Lawnet Dev</a>
+            <a href="{{ route('home')}}" target="_blank">{{ config('app.name') }}</a>
         </div>
 
         <div class="aside_links">
@@ -28,7 +28,7 @@
                     </a>
                 </li>
 
-                <li class="{{ request()->routeIs('users.*') ? 'active' : '' }}">
+                <li class="{{ request()->routeIs('#.*') ? 'active' : '' }}">
                     <a href="#">
                         <i class="fas fa-shopping-cart"></i>
                         <span>Orders</span>
@@ -46,6 +46,13 @@
                     <a href="{{ route('assets.index') }}">
                         <i class="fas fa-folder-open"></i>
                         <span>Assets</span>
+                    </a>
+                </li>
+
+                <li class="{{ request()->routeIs('quotation.*') ? 'active' : '' }}">
+                    <a href="{{ route('quotation.index') }}">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <span>Quotations</span>
                     </a>
                 </li>
 

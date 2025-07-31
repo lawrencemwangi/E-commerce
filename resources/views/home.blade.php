@@ -3,6 +3,11 @@
 
     <div class="home_container">
         <div class="hero_container">
+            <video autoplay muted loop playsinline>
+                <source src="{{ asset('assets/videos/epoxyv.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
             <div class="hero_content">
                 <h1>Welcome to {{ config('site_settings.site_name') }}</h1>
                 <p>Elegant, handcrafted epoxy designs for your space.</p>
