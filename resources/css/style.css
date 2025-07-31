@@ -820,12 +820,17 @@ form .custom_radio_buttons label .option_radio:after {
     height: 50vh;
   }
   .home_container .hero_container .hero_content {
-    top: 32%;
-    left: 50%;
-    width: 90%;
+    top: 50%;
+    width: 80%;
   }
   .home_container .hero_container .hero_content h1 {
-    font-size: 1.1em;
+    font-size: 1.4em;
+  }
+  .home_container .hero_container .hero_content p {
+    font-size: 1em;
+  }
+  .home_container .hero_container .hero_content .button {
+    flex-direction: column;
   }
   .home_container .content_container {
     margin: 0 0.6em;

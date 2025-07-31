@@ -112,12 +112,19 @@
             height: 50vh;
     
             .hero_content{
-                top: 32%;
-                left: 50%;
-                width: 90%;
+                top: 50%;
+                width: 80%;
 
                 h1{
-                    font-size: 1.1em;
+                    font-size: 1.4em;
+                }
+
+                p {
+                    font-size: 1em;
+                }
+
+                .button{
+                    flex-direction: column;
                 }
             }
         }
