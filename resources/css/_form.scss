@@ -14,7 +14,7 @@ form{
         border: none;
         padding: 0.4em 1.5em;
         border-radius: 8px;
-        font-size: 1.1em;
+        font-size: 1em;
         color:$background-color;
         background: $accent-color;
         cursor: pointer;
@@ -23,6 +23,10 @@ form{
 
     .group{
         @include grid(2);
+    }
+
+    label{
+        font-size: 0.9em;
     }
     
     .custom_radio_buttons {
@@ -36,6 +40,7 @@ form{
             width: 30%;
             display: flex;
             align-items: center;
+            font-size: 0.9em;
 
             .option_radio {
                 position: relative;
@@ -128,7 +133,7 @@ form{
         label {
             font-weight: 500;
             padding: 0.5em 0;
-            font-size: 0.95em;          
+            font-size: 0.9em;          
         }
     }
 }

@@ -20,7 +20,7 @@ $asidenav_width:15%;
         }
 
         a{
-            font-size: 1.12em;
+            font-size: 1.1em;
             text-decoration: none;
             color:$text-color;
             font-weight: bold;
@@ -32,8 +32,8 @@ $asidenav_width:15%;
             list-style: none;
 
             li{
-                padding: 0.3em 0;
-                border-bottom: 1.3px solid #444444;
+                padding: 0.22em 0;
+                border-bottom: 1.2px solid #444444;
 
                 a{
                     @include flex_center;
@@ -56,14 +56,14 @@ $asidenav_width:15%;
         @include flex_center;
         flex-direction: column;
         align-items: center;
-        margin: 4em 0;
+        margin: 5.4em 0;
         text-align: center;
 
         .image{
-            margin: 0 0 0.5em;
+            margin: 0 0 0.2em;
 
             img{
-            $image_size: 60px;
+            $image_size: 50px;
             width: $image_size;
             height: $image_size;
             border-radius: 50%;
@@ -80,7 +80,7 @@ $asidenav_width:15%;
             text-decoration:none;
             color:$text-color;
             font-weight: 550;
-            font-size: 0.9em;
+            font-size: 0.8em;
             }
         }
 
@@ -95,12 +95,12 @@ $asidenav_width:15%;
         .logout{
             background: red;
             margin: 0.4em 0;
-            padding:0.4em 1.9em;
+            padding:0.3em 1.9em;
         
             a{
-            text-decoration: none;
-            color: $background-color;
-            
+                text-decoration: none;
+                color: $background-color;
+                font-size: 0.9em;
             }
         }
 

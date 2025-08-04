@@ -14,7 +14,7 @@
     .nav_logo{
         @include flex_center;
         flex-direction: row;
-        gap: 0.5em;
+        gap: 0.4em;
 
         .logo{
             img{
@@ -27,7 +27,7 @@
         .home{
             a{
                 @include anchor;
-                font-size: 1.3em;
+                font-size: 1.2em;
                 font-weight: 550;
             }
         }
@@ -46,7 +46,7 @@
 
                a{
                     @include anchor;
-                    font-size: 1.1em;
+                    font-size: 1em;
                     font-weight: 500
                 }
             }

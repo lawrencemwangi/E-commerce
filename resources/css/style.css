@@ -160,6 +160,7 @@ html {
 .user_container .user_content .user_details span {
   counter-increment: word-count;
   border-right: 1.5px solid #Fbfffe;
+  font-size: 0.8em;
 }
 .user_container .user_content .user_details span:last-child {
   border-right: none;
@@ -168,6 +169,7 @@ html {
 .user_container .user_content .user_infor {
   color: #001514;
   border-bottom: 1px solid #001514;
+  font-size: 0.9em;
 }
 .user_container .user_content .user_infor .action {
   display: grid;
@@ -221,7 +223,7 @@ html {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  gap: 0.5em;
+  gap: 0.4em;
 }
 .navbar_container .nav_logo .logo img {
   width: 40px;
@@ -231,7 +233,7 @@ html {
 .navbar_container .nav_logo .home a {
   text-decoration: none;
   color: #001514;
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 550;
 }
 .navbar_container .nav_links ul {
@@ -248,7 +250,7 @@ html {
 .navbar_container .nav_links ul li a {
   text-decoration: none;
   color: #001514;
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: 500;
 }
 .navbar_container .nav_links ul .profile {
@@ -374,7 +376,7 @@ form button {
   border: none;
   padding: 0.4em 1.5em;
   border-radius: 8px;
-  font-size: 1.1em;
+  font-size: 1em;
   color: #Fbfffe;
   background: #0056b3;
   cursor: pointer;
@@ -390,6 +392,9 @@ form .group {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+form label {
+  font-size: 0.9em;
+}
 form .custom_radio_buttons {
   display: flex;
 }
@@ -401,6 +406,7 @@ form .custom_radio_buttons label {
   width: 30%;
   display: flex;
   align-items: center;
+  font-size: 0.9em;
 }
 form .custom_radio_buttons label .option_radio {
   position: relative;
@@ -472,7 +478,7 @@ form .custom_radio_buttons label .option_radio:after {
 .authentication_container form label {
   font-weight: 500;
   padding: 0.5em 0;
-  font-size: 0.95em;
+  font-size: 0.9em;
 }
 
 @media screen and (width <= 726px) {
@@ -524,7 +530,7 @@ form .custom_radio_buttons label .option_radio:after {
 }
 .footer_container {
   background: #001514;
-  padding: 0 3%;
+  padding: 0 4%;
 }
 .footer_container .footer_content {
   display: grid;
@@ -598,7 +604,7 @@ form .custom_radio_buttons label .option_radio:after {
   border-radius: 50%;
 }
 .aside_container .aside_logo a {
-  font-size: 1.12em;
+  font-size: 1.1em;
   text-decoration: none;
   color: #001514;
   font-weight: bold;
@@ -607,8 +613,8 @@ form .custom_radio_buttons label .option_radio:after {
   list-style: none;
 }
 .aside_container .aside_links ul li {
-  padding: 0.3em 0;
-  border-bottom: 1.3px solid #444444;
+  padding: 0.22em 0;
+  border-bottom: 1.2px solid #444444;
 }
 .aside_container .aside_links ul li a {
   display: flex;
@@ -630,15 +636,15 @@ form .custom_radio_buttons label .option_radio:after {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin: 4em 0;
+  margin: 5.4em 0;
   text-align: center;
 }
 .aside_container .user .image {
-  margin: 0 0 0.5em;
+  margin: 0 0 0.2em;
 }
 .aside_container .user .image img {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: 2px solid #6b6b6b;
   -o-object-fit: contain;
@@ -653,7 +659,7 @@ form .custom_radio_buttons label .option_radio:after {
   text-decoration: none;
   color: #001514;
   font-weight: 550;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 .aside_container .user p {
   padding: 0.3em 0;
@@ -664,19 +670,20 @@ form .custom_radio_buttons label .option_radio:after {
 .aside_container .user .logout {
   background: red;
   margin: 0.4em 0;
-  padding: 0.4em 1.9em;
+  padding: 0.3em 1.9em;
 }
 .aside_container .user .logout a {
   text-decoration: none;
   color: #Fbfffe;
+  font-size: 0.9em;
 }
 
 .admin_container {
   display: flex;
 }
 .admin_container .lastseen_details p {
-  font-size: 1.1em;
-  padding: 0.2em 0;
+  font-size: 1em;
+  padding: 0.3em 0;
 }
 .admin_container .dashboard_infor {
   width: 85%;
@@ -687,7 +694,7 @@ form .custom_radio_buttons label .option_radio:after {
   grid-template-columns: 1fr;
   gap: 1.5em;
   gap: 1.5em;
-  padding: 0.8em 0;
+  padding: 0.5em 0;
 }
 @media screen and (width >= 726px) {
   .admin_container .dashboard_infor .admin_dashboard {
@@ -700,12 +707,12 @@ form .custom_radio_buttons label .option_radio:after {
   justify-content: center;
   gap: 1em;
   background: #001514;
-  padding: 0.5em 0.1em;
+  padding: 0.4em 0;
   border-radius: 16px;
   color: #Fbfffe;
 }
 .admin_container .dashboard_infor .admin_dashboard .admin_items i, .admin_container .dashboard_infor .admin_dashboard .admin_items p, .admin_container .dashboard_infor .admin_dashboard .admin_items span {
-  font-size: 1em;
+  font-size: 0.9em;
   padding: 0.2em 0;
 }
 .admin_container .dashboard_infor .admin_dashboard .admin_items span {
@@ -837,6 +844,9 @@ form .custom_radio_buttons label .option_radio:after {
   }
   .home_container .content_container h2 {
     font-size: 1.3em;
+  }
+  .home_container .collection_container .header h1 {
+    font-size: 1.5em;
   }
 }
 .contact_container {
@@ -1002,23 +1012,27 @@ form .custom_radio_buttons label .option_radio:after {
 }
 
 @media screen and (width <= 726px) {
+  .about_container {
+    padding: 0 8%;
+  }
   .about_container .about_history .about_image {
     display: none;
   }
 }
 .user_container h2 {
-  padding: 0.5em 0;
+  padding: 0.2em 0;
 }
 .user_container p {
-  padding: 0.4em 0.8em;
-  font-size: 1.1em;
+  padding: 0.1em 0.8em;
+  font-size: 0.9em;
 }
 .user_container ul {
   list-style: none;
   padding: 1.2em 0;
 }
 .user_container ul li {
-  padding: 0.5em 0;
+  padding: 0.2em 0;
+  font-size: 0.9em;
 }
 .user_container ul li span {
   padding: 0 0.4em;
@@ -1118,7 +1132,7 @@ form .custom_radio_buttons label .option_radio:after {
 }
 .collection_container .collection_infor .collection_contents .item_content i {
   color: #001514;
-  font-size: 1.5em;
+  font-size: 1.1em;
 }
 .collection_container .collection_infor .collection_contents .cat {
   font-size: 0.8em;
@@ -1126,6 +1140,17 @@ form .custom_radio_buttons label .option_radio:after {
   border-radius: 4px;
 }
 
+@media screen and (width <= 726px) {
+  .collection_container {
+    padding: 0 4%;
+  }
+  .collection_container .collection_infromation .category_items {
+    display: none;
+  }
+  .collection_container .collection_infor .collection_contents .image img {
+    height: 25vh;
+  }
+}
 .quotation-container {
   padding: 2rem;
   display: flex;
@@ -1197,4 +1222,10 @@ form .custom_radio_buttons label .option_radio:after {
 }
 .quotation-actions .btn.whatsapp {
   background-color: #28a745;
+}
+
+@media screen and (width <= 726px) {
+  .quotation_container {
+    padding: 0 4%;
+  }
 }/*# sourceMappingURL=style.css.map */

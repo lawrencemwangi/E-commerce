@@ -132,9 +132,19 @@
         .content_container{
             margin: 0 0.6em;
 
-           h2{
+            h2{
                 font-size: 1.3em;
-           } 
+            }
         }
+
+        .collection_container{
+            .header{
+                h1{
+                    font-size: 1.5em;
+                }
+            }
+        }
+
+        
     }
 }

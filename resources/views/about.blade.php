@@ -52,8 +52,6 @@
         <div class="location_content">
             <h1>Location</h1>
         </div>
-
-        
     </div>
 
     @include('partials.footer')

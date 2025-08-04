@@ -14,7 +14,7 @@ class QuotationController extends Controller
      */
     public function index()
     {
-        $quotations = Quotation::orderBy('created_at' ,'asc')->get();
+        $quotations = Quotation::orderBy('created_at' ,'desc')->get();
 
         return view('backend.quotation.list_quotation', compact('quotations'));
     }
