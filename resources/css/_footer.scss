@@ -9,6 +9,7 @@
         p,h3{
             color: $background-color;
             padding: 0.2em 0;
+            font-size: 0.9em;
         }
     
         .footer_infor{
@@ -29,6 +30,11 @@
                 a{
                     @include anchor;
                     color: $background-color;
+                    font-size: 1em;
+
+                    &:hover{
+                        color: $accent-color;
+                    }
                 }
             }
         }
@@ -55,6 +61,7 @@
         padding: 0.2em 0;
         text-align: center;
         color: $background-color;
+        font-size: 1em;
     }
 }
 

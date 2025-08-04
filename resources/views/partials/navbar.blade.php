@@ -22,10 +22,18 @@
                 </li>
             @endif
             
-            <li><a href="{{ route('about') }}">About</a></li>
-            <li><a href="{{ route('collection') }}">Collection</a></li>
-            <li><a href="{{ route('contact') }}">Contact</a></li>
-            <li><a href="{{ route('quotation') }}">Quotation</li>
+            <li class="{{ request()->routeIs('about') ? 'nav-active' : '' }}">
+                <a href="{{ route('about') }}">About</a>
+            </li>
+            <li class="{{ request()->routeIs('collection') ? 'nav-active' : '' }}">
+                <a href="{{ route('collection') }}">Collection</a>
+            </li>
+            <li class="{{ request()->routeIs('contact') ? 'nav-active' : '' }}">
+                <a href="{{ route('contact') }}">Contact</a>
+            </li>
+            <li class="{{ request()->routeIs('quotation') ? 'nav-active' : '' }}">
+                <a href="{{ route('quotation') }}">Quotation</a>
+            </li>
 
             <li class="profile">
                 @if(Auth::user())

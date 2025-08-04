@@ -27,6 +27,13 @@ html{
     margin: 0 0 3em;
 }
 
+.nav-active{
+    a{
+        font-weight: bold;
+
+    }
+}
+
 .active{
     background: $text-color;
     border-radius: 4px;
