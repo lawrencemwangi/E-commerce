@@ -27,11 +27,18 @@
             <div class="input_group">
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" value="{{ old('password') }}" placeholder="8 character password" required>
+                <span class="absolute" onclick="togglePassword(this)" data-target="password">
+                    <i id="toggleIcon" class="fa fa-eye text-gray-400"></i>
+                </span>
                 <span class="inline_alert">{{ $errors->first('password') }}</span>
             </div>
+
             <div class="input_group">
                 <label for="password_confirmation">Confirm Password</label>
                 <input type="password" name="password_confirmation" id="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="8 character password" required>
+                <span class="absolute" onclick="togglePassword(this)" data-target="password_confirmation">
+                    <i id="toggleIcon" class="fa fa-eye text-gray-400"></i>
+                </span>
                 <span class="inline_alert">{{ $errors->first('password_confirmation') }}</span>
             </div>
 

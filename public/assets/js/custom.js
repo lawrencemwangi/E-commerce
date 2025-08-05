@@ -65,3 +65,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
   
+
+
+// code for toggling the eye the password input to show the it and hide it
+function togglePassword(iconSpan) {
+    const targetId = iconSpan.getAttribute('data-target');
+    const input = document.getElementById(targetId);
+    const icon = iconSpan.querySelector('i');
+
+    icon.classList.add('rotate-animation');
+
+    if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+    } else {
+        input.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+    }
+
+    setTimeout(() => {
+        icon.classList.remove('rotate-animation');
+    }, 300); // match animation duration
+}
+
+

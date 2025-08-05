@@ -12,7 +12,13 @@
     
             <div class="input_group">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" value="{{ old('password') }}" placeholder="********" required>
+                {{-- <input type="password" name="password" id="password" value="{{ old('password') }}" placeholder="********" required> --}}
+                <input id="password" name="password" type="password" placeholder="********" required>
+
+                <!-- Icon inside the input on the right -->
+                <span class="absolute" onclick="togglePassword(this)" data-target="password">
+                    <i id="toggleIcon" class="fa fa-eye text-gray-400"></i>
+                </span>
                 <span class="inline_alert">{{ $errors->first('password') }}</span>
             </div>
     
@@ -28,6 +34,3 @@
         </form>
     </div>
 </x-app-layout>
-
-
-
