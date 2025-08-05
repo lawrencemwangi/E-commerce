@@ -1,4 +1,6 @@
 <x-admin-layout>
+    <x-header title="Users"/>
+
     <div class="container user_container">
         <div class="user_content">
             <div class="user_details">
@@ -10,27 +12,32 @@
                 <span class="user-col">Action</span>
             </div>
              
-            @if (empty($users))
+            <div id="collectionList">
+                 @if (empty($users))
                 <p>No User Found at the moment</p> 
-            @else
-                @foreach ($users as $user)
-                    <div class="user_infor">
-                        <span class="user-col">{{ $user->names }}</span>
-                        <span class="user-col">{{ $user->email }}</span>
-                        <span class="user-col">{{ $user->phone_number }}</span>
-                        <span class="user-col"> <strong>{{ $user->user_level  == 1 ? 'Admin' : 'User'}}</strong></span>
-                        <span class="user-col {{ $user->status == 1 ? 'text-success' : 'text-danger' }}">
-                            {{ $user->status == 1 ? 'Active' : 'Inactive' }}
-                        </span>
-                        
-                        <span class="action">
-                            <a href="{{ route('users.edit',['user' => $user]) }}">
-                                <i class="fas fa-pencil-alt"></i>
-                            </a>
-                        </span>
-                    </div>
-                @endforeach
-            @endif      
+                @else
+                    @foreach ($users as $user)
+                        <div class="user_infor searchable">
+                            <span class="user-col">{{ $user->names }}</span>
+                            <span class="user-col">{{ $user->email }}</span>
+                            <span class="user-col">{{ $user->phone_number }}</span>
+                            <span class="user-col"> <strong>{{ $user->user_level  == 1 ? 'Admin' : 'User'}}</strong></span>
+                            <span class="user-col {{ $user->status == 1 ? 'text-success' : 'text-danger' }}">
+                                {{ $user->status == 1 ? 'Active' : 'Inactive' }}
+                            </span>
+                            
+                            <span class="action">
+                                <a href="{{ route('users.edit',['user' => $user]) }}">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                            </span>
+                        </div>
+                    @endforeach
+                @endif 
+            </div>
+            <div id="noResults" style="display: none; text-align: center; color: red; margin-top: 1em;">
+                No results found.
+            </div>     
         </div>
     </div>
 </x-admin-layout>

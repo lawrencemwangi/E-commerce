@@ -13,6 +13,7 @@ use App\Http\Controllers\StockController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\AssetController;
 use App\Http\Controllers\QuotationController;
+use App\Http\Controllers\SearchController;
 
 Route::get('/', [HomeController::class, 'HomePage'])->name('home');
 Route::get('/about', [HomeController::class, 'AboutPage'])->name('about');
@@ -24,6 +25,11 @@ Route::get('/blog', [HomeController::class, 'BlogPage'])->name('blog');
 Route::get('/status', [StatusController::class, 'StatusPage'])->name('status')->middleware('web');
 Route::get('/get_quotation', [MessagesController::class, 'GetQuotation'])->name('quotation');
 Route::post('/get_quotation', [QuotationController::class, 'store'])->name('quotation.store');
+Route::get('/search', fn() => view('search'));
+Route::get('/search-live', [SearchController::class, 'liveSearch']);
+Route::get('/collections/search', [\App\Http\Controllers\CollectionController::class, 'search'])->name('collections.search');
+
+
 
 
 

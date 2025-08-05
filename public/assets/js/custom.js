@@ -87,7 +87,52 @@ function togglePassword(iconSpan) {
 
     setTimeout(() => {
         icon.classList.remove('rotate-animation');
-    }, 300); // match animation duration
+    }, 300); 
 }
 
 
+
+// search functinality for the system
+// function searchFunction() {
+//     // Get the input value
+//     var input = document.getElementById("myInput");
+//     var filter = input.value.toUpperCase();
+
+//     // Get all elements with the class name "item"
+//     var items = document.getElementsByClassName("searchable");
+
+//     // Loop through all items and hide those that don't match the search query
+//     for (var i = 0; i < items.length; i++) {
+//         var item = items[i];
+//         var text = item.textContent || item.innerText;
+
+//         if (text.toUpperCase().indexOf(filter) > -1) {
+//             item.style.display = "";
+//         } else {
+//             item.style.display = "none";
+//         }
+//     }
+// }
+ function searchFunction() {
+    const input = document.getElementById("myInput");
+    const filter = input.value.toUpperCase();
+    const items = document.getElementsByClassName("searchable");
+    const noResults = document.getElementById("noResults");
+
+    let visibleCount = 0;
+
+    for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        const text = item.textContent || item.innerText;
+
+        if (text.toUpperCase().includes(filter)) {
+            item.style.display = "";
+            visibleCount++;
+        } else {
+            item.style.display = "none";
+        }
+    }
+
+    // Show or hide the "No results found" message
+    noResults.style.display = (visibleCount === 0) ? "block" : "none";
+}

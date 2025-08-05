@@ -60,33 +60,41 @@ html{
     color: $background-color;
 }
 
-
-
-.header{
+.headers {
     @include flex_center;
     justify-content: space-between;
-    padding:0.9em;
+    padding: 0.9em;
+    flex-wrap: wrap; 
 
-    .search{
-        input{
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .search {
+        input {
             padding: 0.5em 2em;
-            border-radius: 12px;
-            border:1px solid $text-color;
+            border-radius: 12px 0 0 12px;
+            border: 1px solid $text-color;
+        }
 
-            span{
-                i{
-                    color:$text-color;
-                }
+        span {
+            position: relative;
+
+            i {
+                position: absolute;
+                color: $background-color;
+                background-color: $text-color;
+                padding: 0.55em 0.8em;
+                border-radius: 0 12px 12px 0;
             }
-
         }
     }
 
-    .btn{
-        button{
+    .btn {
+        button {
             border: none;
 
-            a{
+            a {
                 @include anchor;
                 background: $text-color;
                 padding: 0.5em 1.2em;
@@ -94,9 +102,18 @@ html{
                 border-radius: 8px;
             }
         }
-        
+    }
+
+    &.no-btn {
+        justify-content: flex-start;
+        gap: 10rem;
+
+        .btn {
+            display: none;
+        }
     }
 }
+
 
 
 .link_container{

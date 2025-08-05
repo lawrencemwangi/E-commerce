@@ -95,5 +95,4 @@ class CollectionController extends Controller
 
         return view('filter_collection', compact('collections', 'category', 'categories', 'collectionCount'));
     }
-
 }

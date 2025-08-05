@@ -55,31 +55,49 @@ html {
   color: #Fbfffe;
 }
 
-.header {
+.headers {
   display: flex;
   align-items: center;
   justify-content: center;
   justify-content: space-between;
   padding: 0.9em;
+  flex-wrap: wrap;
 }
-.header .search input {
+.headers h1 {
+  font-size: 1.5em;
+}
+.headers .search input {
   padding: 0.5em 2em;
-  border-radius: 12px;
+  border-radius: 12px 0 0 12px;
   border: 1px solid #001514;
 }
-.header .search input span i {
-  color: #001514;
+.headers .search span {
+  position: relative;
 }
-.header .btn button {
+.headers .search span i {
+  position: absolute;
+  color: #Fbfffe;
+  background-color: #001514;
+  padding: 0.55em 0.8em;
+  border-radius: 0 12px 12px 0;
+}
+.headers .btn button {
   border: none;
 }
-.header .btn button a {
+.headers .btn button a {
   text-decoration: none;
   color: #001514;
   background: #001514;
   padding: 0.5em 1.2em;
   color: #Fbfffe;
   border-radius: 8px;
+}
+.headers.no-btn {
+  justify-content: flex-start;
+  gap: 10rem;
+}
+.headers.no-btn .btn {
+  display: none;
 }
 
 .link_container {
@@ -397,6 +415,21 @@ form select {
   border: 1px solid gray;
   margin: 0.5em 0;
   font-size: 0.9em;
+}
+form .input_group {
+  position: relative;
+}
+form .input_group .absolute {
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+  z-index: 10;
+  font-size: 1rem;
+  color: #001514;
+  transition: transform 0.3s ease;
+}
+form .input_group .rotate-animation {
+  transform: rotate(180deg);
 }
 form button {
   border: none;

@@ -1,6 +1,7 @@
 <x-admin-layout>
     @include('backend.partials.link')
     <x-header title="Collections" addLink="{{ route('collection.create') }}"/>
+   
     
     <div class="container user_container">
         <div class="user_content">
@@ -14,30 +15,36 @@
                 <span class="user-col">Action</span>
             </div>
              
-            @if (empty($collections))
+            <div id="collectionList">
+                @if (empty($collections))
                 <p>No Collection Found at the moment</p> 
-            @else
-                @foreach ($collections as $collection)
-                    <div class="user_infor">
-                        <span class="user-col">{{ $collection->stock->item_name }}</span>
-                        <span class="user-col">{{ $collection->category->title }}</span>
-                        <span class="user-col">{{ number_format($collection->price, 2) }}</span>
-                        <span class="user-col {{ $collection->visibility == 1 ? 'text-success' : 'text-danger' }}">
-                            {{ $collection->visibility == 1 ? 'Yes' : 'No' }}
-                        </span>
-                        <span class="user-col {{ $collection->featured == 1 ? 'text-success' : 'text-danger' }}">
-                            {{ $collection->featured == 1 ? 'Active' : 'Inactive' }}
-                        </span>
-                        <span class="user-col">{{ $collection->in_stock }}</span>
-                        
-                        <span class="action">
-                            <a href="#">
-                                <i class="fas fa-pencil-alt"></i>
-                            </a>
-                        </span>
-                    </div>
-                @endforeach
-            @endif      
+                @else
+                    @foreach ($collections as $collection)
+                        <div class="user_infor searchable">
+                            <span class="user-col">{{ $collection->stock->item_name }}</span>
+                            <span class="user-col">{{ $collection->category->title }}</span>
+                            <span class="user-col">{{ number_format($collection->price, 2) }}</span>
+                            <span class="user-col {{ $collection->visibility == 1 ? 'text-success' : 'text-danger' }}">
+                                {{ $collection->visibility == 1 ? 'Yes' : 'No' }}
+                            </span>
+                            <span class="user-col {{ $collection->featured == 1 ? 'text-success' : 'text-danger' }}">
+                                {{ $collection->featured == 1 ? 'Active' : 'Inactive' }}
+                            </span>
+                            <span class="user-col">{{ $collection->in_stock }}</span>
+                            
+                            <span class="action">
+                                <a href="#">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                            </span>
+                        </div>
+                    @endforeach
+                @endif  
+            </div>  
+            
+            <div id="noResults" style="display: none; text-align: center; color: red; margin-top: 1em;">
+                No results found.
+            </div>
         </div>
     </div>
 </x-admin-layout>
