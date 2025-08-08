@@ -51,7 +51,7 @@ class AssetController extends Controller
      */
     public function edit(Asset $asset)
     {
-        //
+        return view('backend.assets.upate_assets', compact('asset'));
     }
 
     /**

@@ -36,6 +36,15 @@
                                 <a href="#">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
+
+                                <form  id="deleteForm_" action="#" method="post">
+                                    @csrf
+                                    @method("DELETE")
+
+                                    <a href="javascript:void(0)" onclick="deleteItem();" >
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </form>
                             </span>
                         </div>
                     @endforeach

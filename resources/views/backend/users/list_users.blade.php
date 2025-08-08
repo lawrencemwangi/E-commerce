@@ -35,6 +35,7 @@
                     @endforeach
                 @endif 
             </div>
+            
             <div id="noResults" style="display: none; text-align: center; color: red; margin-top: 1em;">
                 No results found.
             </div>     

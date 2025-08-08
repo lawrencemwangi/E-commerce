@@ -4,8 +4,8 @@
     <h1>{{ $title }}</h1>
 
     <div class="search">
-        <input  type="text" name="search" id="myInput" onkeyup="searchFunction()" placeholder="Search here...">
-        <span><i class="fas fa-search"></i></span>
+        <input  type="text" name="search" id="myInput" onkeyup="searchFunction()" placeholder="Search anything here...">
+        {{-- <span><i class="fas fa-search"></i></span> --}}
     </div>
     
     @if ($addLink)
