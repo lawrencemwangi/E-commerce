@@ -34,6 +34,15 @@
                                 <a href="{{ route('stock.edit', ['stock' => $stock]) }}">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
+
+                                <form  id="deleteForm_{{ $stock->id }}" action="{{ route('stock.destroy', ['stock' => $stock->id]) }}" method="post">
+                                    @csrf
+                                    @method("DELETE")
+
+                                    <a href="javascript:void(0)" onclick="deleteItem({{ $stock->id }}, 'stock');" >
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </form>
                             </span>
                         </div>
                     @endforeach

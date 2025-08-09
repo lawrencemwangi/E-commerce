@@ -22,15 +22,15 @@
                             <span class="user-col">{{ $asset->quantity }}</span>
                             <span class="user-col">{{ $asset->price }}</span> 
                             <span class="action">
-                                <a href="#">
+                                <a href="{{ route('assets.edit', ['asset' => $asset]) }}">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
 
-                                <form  id="deleteForm_" action="#" method="post">
+                                <form  id="deleteForm_{{ $asset->id }}" action="{{ route('assets.destroy', ['asset' => $asset->id]) }}" method="post">
                                     @csrf
                                     @method("DELETE")
 
-                                    <a href="javascript:void(0)" onclick="deleteItem();" >
+                                    <a href="javascript:void(0)" onclick="deleteItem({{ $asset->id }}, 'assets');" >
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
                                 </form>

@@ -51,15 +51,19 @@ class AssetController extends Controller
      */
     public function edit(Asset $asset)
     {
-        return view('backend.assets.upate_assets', compact('asset'));
+        return view('backend.assets.update_asset', compact('asset'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Asset $asset)
+    public function update(AssetsRequest $request, Asset $asset)
     {
-        //
+        $asset->update($request->validated());
+        return redirect()->route('assets.index')->with('success',[
+            'message' => 'Asset Updated Successfully',
+            'duration' => $this->alert_message_duration,
+        ]);
     }
 
     /**
@@ -67,6 +71,12 @@ class AssetController extends Controller
      */
     public function destroy(Asset $asset)
     {
-        //
+        $asset->delete();
+
+        return redirect()->route('assets.index')->with('success',[
+            'message' => 'Asset Deleted Successfully',
+            'duration' => $this->alert_message_duration,
+        ]);
+
     }
 }

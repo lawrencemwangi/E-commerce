@@ -33,15 +33,15 @@
                             <span class="user-col">{{ $collection->in_stock }}</span>
                             
                             <span class="action">
-                                <a href="#">
+                                <a href="{{ route('collection.edit', ['collection' => $collection]) }}">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
 
-                                <form  id="deleteForm_" action="#" method="post">
+                                <form  id="deleteForm_{{ $collection->id }}" action="{{ route('collection.destroy', ['collection' => $collection->id]) }}" method="post">
                                     @csrf
                                     @method("DELETE")
 
-                                    <a href="javascript:void(0)" onclick="deleteItem();" >
+                                    <a href="javascript:void(0)" onclick="deleteItem({{ $collection->id }} ,'collections');" >
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
                                 </form>

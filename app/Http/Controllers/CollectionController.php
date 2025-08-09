@@ -8,6 +8,7 @@ use App\Models\Stock;
 use Illuminate\Http\Request;
 use App\Http\Requests\CollectionRequest;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 
 class CollectionController extends Controller
@@ -65,15 +66,34 @@ class CollectionController extends Controller
      */
     public function edit(Collection $collection)
     {
-        //
+        $categories = Category::all();
+        return view('backend.collection.update_collection', compact('collection','categories' ));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Collection $collection)
+    public function update(CollectionRequest $request, Collection $collection)
     {
-        //
+        $collection = update($request->validated());
+
+        if ($request->hasFile('image')) {
+
+            if ($collection->image && Storage::disk('public')->exists('collection/' . $collection->image)) {
+                Storage::disk('public')->delete('collection/' . $collection->image);
+            }
+
+            $image = $request->file('image');
+            $imageName = Str::random(5) . '.' . $image->getClientOriginalExtension();            
+            $imagePath = $image->storeAs('collection', $imageName, 'public');
+
+            $collection->update(['image' => $imageName]);
+        }
+
+        return redirect()->route('collection.index')->with('success', [
+            'message' => 'collection Updated successfully',
+            'duration' => $this->alert_message_duration,
+        ]);
     }
 
     /**
@@ -81,7 +101,12 @@ class CollectionController extends Controller
      */
     public function destroy(Collection $collection)
     {
-        //
+        $colection->delete();
+
+        return redirect()->route('collection.index')->with('success', [
+            'message' => 'collection Deleted successfully',
+            'duration' => $this->alert_message_duration,
+        ]);
     }
 
 

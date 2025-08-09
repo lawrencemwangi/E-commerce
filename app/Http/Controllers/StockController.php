@@ -75,6 +75,11 @@ class StockController extends Controller
      */
     public function destroy(Stock $stock)
     {
-        //
+        $stock->delete();
+
+        return redirect()->route('stock.index')->with('success',[
+            'message' => 'Stock Item Deleted sucessfully',
+            'duration' => $this->alert_message_duration,
+        ]); 
     }
 }
