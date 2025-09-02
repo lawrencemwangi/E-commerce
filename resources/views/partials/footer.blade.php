@@ -43,7 +43,7 @@
     <hr>
 
     <div class="copyright">
-         <p>&copy; 2025 | {{ config('site_settings.site_name') }} | All Rights Reserved</p>
+         <p>&copy; {{ date('Y') }} | {{ config('site_settings.site_name') }} | All Rights Reserved</p>
     </div>
 </div>
 

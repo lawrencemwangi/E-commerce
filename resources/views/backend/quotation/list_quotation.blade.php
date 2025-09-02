@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <x-header title="Quotations"/>
+    <x-header title="Quotations" addLink="{{ route('quotation.add') }}"/>
 
     <div class="message_container user_container">
         <div class="user_content">

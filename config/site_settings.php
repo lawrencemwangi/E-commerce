@@ -3,7 +3,7 @@
 return [
     'site_name' => 'Lawnet Decor',
     'logo' => 'assets/images/logo.jpeg',
-    'site_url' => env('APP_URL', 'https://lawnet.com'),
+    'site_url' => env('APP_URL', 'https://lawnetdecor.com'),
     'email' => 'info@lawnetdecor.com',
     'contact' => '+254799509242',
     'address' => 'Nairobi, Kenya',

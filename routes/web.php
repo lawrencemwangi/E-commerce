@@ -27,8 +27,7 @@ Route::get('/get_quotation', [MessagesController::class, 'GetQuotation'])->name(
 Route::post('/get_quotation', [QuotationController::class, 'store'])->name('quotation.store');
 Route::get('/search', fn() => view('search'));
 Route::get('/search-live', [SearchController::class, 'liveSearch']);
-Route::get('/collections/search', [\App\Http\Controllers\CollectionController::class, 'search'])->name('collections.search');
-
+Route::get('/collections/search', [CollectionController::class, 'search'])->name('collections.search');
 
 
 
@@ -49,8 +48,12 @@ Route::middleware('auth','admin', 'status')->group(function (){
     Route::resource('admin/category', CategoryController::class);
     Route::resource('admin/stock', StockController::class);
     Route::resource('admin/assets', AssetController::class);
-    Route::resource('admin/quotation', QuotationController::class)->except('store');
+    Route::resource('admin/quotation', QuotationController::class);
     Route::get('admin/quotation/{quotation}/generate', [QuotationController::class, 'generateTemplate'])->name('quotation.generate');
+    Route::get('admin/contact/{message}/reply', [MessagesController::class, 'Showreply'])->name('contact.reply');
+    Route::post('admin/contact/{message}/reply', [MessagesController::class, 'EmailReply'])->name('contact.sendReply');
+    Route::get('admin/add_quotation', [MessagesController::class, 'Quotation'])->name('quotation.add');
+
 });
 
 require __DIR__.'/auth.php';

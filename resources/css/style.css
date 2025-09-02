@@ -1297,4 +1297,102 @@ form .custom_radio_buttons label .option_radio:after {
   .quotation_container {
     padding: 0 4%;
   }
+}
+.reply-wrapper {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  padding: 2rem;
+  min-height: 100vh;
+}
+.reply-wrapper .page-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #0d6efd;
+}
+.reply-wrapper .alert {
+  padding: 0.8rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.reply-wrapper .alert.alert-success {
+  background-color: rgb(131.8125, 232.1875, 185.65);
+  border: 1px solid #198754;
+  color: #198754;
+}
+.reply-wrapper .reply-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.reply-wrapper .reply-container .form-section,
+.reply-wrapper .reply-container .preview-section {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1.5rem;
+  flex: 1;
+  min-width: 300px;
+}
+.reply-wrapper .reply-container .form-section form {
+  display: flex;
+  flex-direction: column;
+}
+.reply-wrapper .reply-container .form-section form label {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.reply-wrapper .reply-container .form-section form input[type=text],
+.reply-wrapper .reply-container .form-section form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+}
+.reply-wrapper .reply-container .form-section form input[type=text]:focus,
+.reply-wrapper .reply-container .form-section form textarea:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 0 4px rgba(13, 110, 253, 0.4);
+}
+.reply-wrapper .reply-container .form-section form button {
+  background-color: #0d6efd;
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.reply-wrapper .reply-container .form-section form button:hover {
+  background-color: rgb(1.8459016393, 91.3721311475, 223.3540983607);
+}
+.reply-wrapper .reply-container .preview-section {
+  background-color: #f8f9fa;
+}
+.reply-wrapper .reply-container .preview-section .email-preview {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+.reply-wrapper .reply-container .preview-section .email-preview p {
+  margin-bottom: 1rem;
+}
+.reply-wrapper .reply-container .preview-section .email-preview .email-footer {
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: black;
+}
+.reply-wrapper .reply-container .preview-section .email-preview .email-footer a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */

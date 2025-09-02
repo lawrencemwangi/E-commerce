@@ -71,7 +71,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-<script>
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('download-btn').addEventListener('click', async function () {
             const element = document.getElementById('quotation-content');
@@ -106,4 +106,40 @@
         };
     });
 
+</script> --}}
+
+
+
+<script>
+document.getElementById('download-btn').addEventListener('click', async function () {
+    const element = document.getElementById('quotation-content');
+
+    const canvas = await html2canvas(element, {
+        scale: 2, 
+        useCORS: true 
+    });
+
+    const imgData = canvas.toDataURL('image/png');
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF('p', 'mm', 'a4');
+
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const imgProps = pdf.getImageProperties(imgData);
+    const pdfHeight = (imgProps.height * pageWidth) / imgProps.width;
+
+    pdf.addImage(imgData, 'PNG', 0, 0, pageWidth, pdfHeight);
+    pdf.save('quotation.pdf');
+});
+window.sendWhatsApp = function () {
+    let rawContact = "{{ $quotation->contact }}".replace(/\D/g, '');
+    if (rawContact.startsWith('0')) {
+        rawContact = '254' + rawContact.substring(1);
+    } else if (rawContact.startsWith('+')) {
+        rawContact = rawContact.substring(1); 
+    }
+
+    const message = `Hello {{ $quotation->names }}, your quotation is ready.%0AQuotation No: {{ $quotation->quotation_no }}%0ATotal: KES {{ number_format($quotation->total, 2) }}`;
+    const whatsappURL = `https://wa.me/${rawContact}?text=${message}`;
+    window.open(whatsappURL, '_blank');
+};
 </script>

@@ -20,7 +20,7 @@
                             <span class="user-col">{{ $message->email }}</span>
                             <span class="user-col">{{ $message->message }}</span>
                             <span class="action">
-                                <a href="#">
+                                <a href="{{ route('contact.reply', ['message' => $message]) }}">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
                             </span>

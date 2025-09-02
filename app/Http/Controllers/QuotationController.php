@@ -37,7 +37,7 @@ class QuotationController extends Controller
         $validated['quotation_no'] = 'QUO-' . Str::random(4);
         $quotation = Quotation::create($validated);
     
-        return redirect()->route('quotation')->with('success', [
+        return redirect()->back()->with('success', [
             'message' => 'Quotation send successfully',
             'duration' => $this->alert_message_duration,
         ]);
@@ -96,6 +96,7 @@ class QuotationController extends Controller
     {
         //
     }
+    
 
     public function generateTemplate(Quotation $quotation)
     {
